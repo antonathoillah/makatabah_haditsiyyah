@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>المكتبة الحديثية — الفهرس الجامع</title>
+<meta name="description" content="البوابة الجامعة لفهارس كتب الحديث: علوم الحديث، كتب السنة، الشروح، التخريج والأطراف، والعلل والسؤلات." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#070a0f;
+    --ink-2:#0b1017;
+    --panel:#0e151e;
+    --line:rgba(201,162,39,.22);
+    --line-soft:rgba(255,255,255,.07);
+    --gold:#c9a227;
+    --gold-2:#f0d78c;
+    --gold-3:#8a6d16;
+    --cream:#f6f1e7;
+    --muted:#9aa6b2;
+    --muted-2:#73808d;
+    --radius:22px;
+    --shadow:0 24px 70px rgba(0,0,0,.45);
+    --font-display:'Scheherazade New',serif;
+    --font-ui:'Scheherazade New',serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    min-height:100vh;
+    color:var(--cream);
+    font-family:var(--font-ui);
+    font-size:1.05rem;
+    line-height:1.95;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(201,162,39,.15), transparent 60%),
+      radial-gradient(900px 500px at 0% 15%, rgba(58,96,140,.18), transparent 55%),
+      radial-gradient(1000px 700px at 50% 110%, rgba(201,162,39,.08), transparent 60%),
+      linear-gradient(180deg,#070a0f 0%,#080c12 45%,#070a0f 100%);
+    background-attachment:fixed;
+    text-rendering:optimizeLegibility;
+  }
+  b, strong, h1, h2, h3, h4 { font-weight:400; }
+  body::before{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.14;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23c9a227' stroke-width='.6'%3E%3Cpath d='M60 8l14 24 28 4-20 20 5 28-27-14-27 14 5-28L18 36l28-4z'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:280px 280px;
+    mask-image:radial-gradient(circle at 50% 0%,#000 0%,transparent 78%);
+  }
+  ::selection{background:rgba(201,162,39,.35);color:#fff}
+  a{color:inherit;text-decoration:none}
+  button,input{font:inherit;font-family:inherit}
+  .shell{position:relative;z-index:1;width:min(1360px,94vw);margin:0 auto}
+
+  /* ===== Top bar ===== */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(18px);
+    background:linear-gradient(180deg,rgba(7,10,15,.92),rgba(7,10,15,.72));
+    border-bottom:1px solid var(--line-soft);
+  }
+  .topbar-inner{
+    display:flex;align-items:center;justify-content:space-between;gap:18px;
+    padding:14px 0;
+  }
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand-mark{
+    width:44px;height:44px;flex:none;border-radius:14px;
+    display:grid;place-items:center;
+    background:linear-gradient(145deg,rgba(201,162,39,.18),rgba(201,162,39,.04));
+    border:1px solid var(--line);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    color:var(--gold-2);
+  }
+  .brand-mark svg{width:22px;height:22px}
+  .brand-text b{
+    display:block;font-family:var(--font-display);font-size:1.45rem;
+    color:var(--cream);white-space:nowrap;line-height:1.3;
+  }
+  .brand-text span{display:block;font-size:.85rem;color:var(--muted-2)}
+  .topnav{display:flex;gap:6px;flex-wrap:wrap}
+  .topnav a{
+    padding:6px 14px;border-radius:999px;font-size:.9rem;color:var(--muted);
+    border:1px solid transparent;transition:.25s;
+  }
+  .topnav a:hover{color:var(--gold-2);border-color:var(--line);background:rgba(201,162,39,.06)}
+
+  /* ===== Hero ===== */
+  .hero{padding:84px 0 44px;text-align:center;position:relative}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.88rem;color:var(--gold-2);
+    margin-bottom:22px;letter-spacing:.05em;
+  }
+  .eyebrow::before,.eyebrow::after{
+    content:"";width:38px;height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .hero h1{
+    margin:0 auto;max-width:960px;
+    font-family:var(--font-display);
+    font-size:clamp(3rem,7vw,5.6rem);
+    line-height:1.18;
+    background:linear-gradient(180deg,#fffaf0 0%,#f0d78c 55%,#b9921f 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 22px 60px rgba(201,162,39,.14);
+  }
+  .hero p.lead{
+    max-width:760px;margin:22px auto 0;color:var(--muted);
+    font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.9;
+  }
+  .ornament{
+    width:min(460px,72vw);height:26px;margin:30px auto 0;
+    display:flex;align-items:center;gap:12px;color:var(--gold);
+    opacity:.85;
+  }
+  .ornament::before,.ornament::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .ornament i{width:9px;height:9px;transform:rotate(45deg);border:1px solid var(--gold);display:block}
+
+  .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:38px}
+  .stat{
+    min-width:170px;padding:16px 24px;border-radius:16px;
+    border:1px solid var(--line-soft);
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+  }
+  .stat b{display:block;font-family:var(--font-display);font-size:2.1rem;color:var(--gold-2);line-height:1.15}
+  .stat span{font-size:.88rem;color:var(--muted-2)}
+
+  /* ===== Section heading ===== */
+  .section-head{
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+    margin:40px 0 24px;flex-wrap:wrap;
+  }
+  .section-head h2{
+    margin:0;font-family:var(--font-display);
+    font-size:1.7rem;color:var(--cream);line-height:1.4;
+  }
+  .section-head h2 span{color:var(--gold-2)}
+  .section-head .hint{font-size:.9rem;color:var(--muted-2)}
+
+  /* ===== Collections grid ===== */
+  .collections{
+    display:grid;gap:26px;
+    grid-template-columns:repeat(auto-fill,minmax(380px,1fr));
+    padding-bottom:40px;
+  }
+  .collection{
+    position:relative;display:flex;flex-direction:column;
+    border-radius:var(--radius);
+    border:1px solid var(--line-soft);
+    background:
+      radial-gradient(600px 220px at 85% -20%,rgba(201,162,39,.12),transparent 60%),
+      linear-gradient(180deg,var(--panel),var(--ink-2));
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    transition:transform .4s ease,border-color .4s,box-shadow .4s;
+    animation:rise .7s both;
+    isolation:isolate;
+  }
+  .collection::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    opacity:.7;transition:opacity .4s;
+  }
+  .collection::after{
+    content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(500px 300px at 50% 0%,rgba(201,162,39,.14),transparent 70%);
+    opacity:0;transition:opacity .4s;
+  }
+  .collection:hover{
+    transform:translateY(-6px);
+    border-color:rgba(201,162,39,.42);
+    box-shadow:0 36px 90px rgba(0,0,0,.6);
+  }
+  .collection:hover::before{opacity:1}
+  .collection:hover::after{opacity:1}
+
+  .collection-link{display:flex;flex-direction:column;height:100%}
+
+  .collection-body{
+    padding:28px 26px 20px;
+    display:flex;flex-direction:column;flex:1;
+    position:relative;
+  }
+  .collection-top{
+    display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+    margin-bottom:18px;
+  }
+  .collection-icon{
+    width:64px;height:64px;flex:none;border-radius:18px;
+    display:grid;place-items:center;
+    background:linear-gradient(145deg,rgba(201,162,39,.22),rgba(201,162,39,.05));
+    border:1px solid var(--line);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 10px 24px rgba(201,162,39,.08);
+    color:var(--gold-2);
+    transition:transform .4s ease;
+  }
+  .collection:hover .collection-icon{transform:rotate(-4deg) scale(1.04)}
+  .collection-icon svg{width:30px;height:30px}
+  .collection-order{
+    font-family:var(--font-display);
+    font-size:2.6rem;line-height:1;
+    color:rgba(201,162,39,.28);
+    transition:color .35s;
+    font-variant-numeric:tabular-nums;
+  }
+  .collection:hover .collection-order{color:rgba(240,215,140,.6)}
+
+  .collection h3{
+    margin:0 0 10px;
+    font-family:var(--font-display);
+    font-size:1.85rem;line-height:1.35;
+    color:var(--cream);
+  }
+  .collection p{
+    margin:0 0 22px;
+    font-size:.98rem;color:var(--muted);line-height:1.9;
+    flex:1;
+  }
+  .collection-foot{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    padding-top:18px;border-top:1px dashed rgba(201,162,39,.18);
+  }
+  .collection-count{
+    display:flex;align-items:baseline;gap:8px;
+  }
+  .collection-count b{
+    font-family:var(--font-display);font-size:1.55rem;color:var(--gold-2);line-height:1;
+  }
+  .collection-count span{font-size:.82rem;color:var(--muted-2)}
+  .collection-arrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.9rem;color:var(--gold-2);
+    padding:7px 16px;border-radius:999px;
+    border:1px solid rgba(201,162,39,.4);
+    background:linear-gradient(180deg,rgba(201,162,39,.14),rgba(201,162,39,.03));
+    transition:.28s;
+  }
+  .collection:hover .collection-arrow{
+    background:rgba(201,162,39,.22);
+    border-color:var(--gold);
+    color:#fff;
+    transform:translateX(-4px);
+  }
+  .collection-arrow svg{width:14px;height:14px}
+
+  /* Badges inside card */
+  .collection-tags{
+    display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;
+  }
+  .collection-tag{
+    font-size:.72rem;padding:3px 11px;border-radius:999px;
+    color:var(--gold-2);
+    border:1px solid rgba(201,162,39,.22);
+    background:rgba(201,162,39,.05);
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    margin-top:30px;
+    border-top:1px solid var(--line-soft);
+    padding:36px 0 48px;text-align:center;color:var(--muted-2);font-size:.9rem;
+  }
+  footer .f-brand{
+    font-family:var(--font-display);font-size:1.4rem;color:var(--gold-2);
+    display:block;margin-bottom:8px;
+  }
+  footer .f-links{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:18px;
+    margin-top:14px;font-size:.85rem;
+  }
+  footer .f-links a{
+    padding-bottom:1px;border-bottom:1px solid rgba(201,162,39,.25);
+  }
+  footer .f-links a:hover{color:var(--gold-2)}
+
+  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+  @media (max-width:720px){
+    .topnav{display:none}
+    .hero{padding:56px 0 30px}
+    .collections{grid-template-columns:1fr;gap:20px}
+    .collection-body{padding:22px 20px 18px}
+    .collection h3{font-size:1.55rem}
+    .collection-icon{width:54px;height:54px;border-radius:16px}
+    .collection-icon svg{width:26px;height:26px}
+    .collection-order{font-size:2.1rem}
+    .stat{min-width:130px;padding:13px 18px}
+    .stat b{font-size:1.7rem}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M4 6.5C4 5.1 5.1 4 6.5 4H20v15.5H6.5A2.5 2.5 0 0 0 4 22V6.5Z"/>
+          <path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/>
+          <path d="M8 8h8M8 11.5h5"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <b>المكتبة الحديثية</b>
+        <span>الفهرس الجامع</span>
+      </div>
+    </div>
+    <nav class="topnav" aria-label="التنقل السريع">
+      <a href="#collections">الأقسام</a>
+      <a href="#about">عن المشروع</a>
+    </nav>
+  </div>
+</header>
+
+<main class="shell">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <span class="eyebrow">فهرس زمني شامل</span>
+    <h1>المكتبة الحديثية</h1>
+    <p class="lead">
+      بوابة جامعة لخمسة فهارس زمنية لكتب الحديث وعلومه: من أصول الرواية ومصطلحها،
+      إلى دواوين السنة وشروحها، وتخريج أطرافها، وكشف عللها وسؤالات أئمتها.
+      كل فهرس مرتّبٌ على تواريخ وفاة مصنفيه، ببطاقاتٍ من عشرة كتب.
+    </p>
+    <div class="ornament" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="stats">
+      <div class="stat"><b>٥</b><span>فهارس رئيسية</span></div>
+      <div class="stat"><b>٧٠٠+</b><span>كتابًا مفهرسًا</span></div>
+      <div class="stat"><b>١٥</b><span>قرنًا هجريًا</span></div>
+      <div class="stat"><b>١٠</b><span>كتب في كل بطاقة</span></div>
+    </div>
+  </section>
+
+  <!-- ===== Collections ===== -->
+  <div class="section-head" id="collections">
+    <h2>أقسام <span>المكتبة</span></h2>
+    <span class="hint">اختر فهرسًا للانتقال إليه</span>
+  </div>
+
+  <section class="collections" aria-label="أقسام المكتبة الحديثية">
+
+    <!-- 1 -->
+    <article class="collection" style="animation-delay:.05s">
+      <a class="collection-link" href="ulum-al-hadith.html">
+        <div class="collection-body">
+          <div class="collection-top">
+            <div class="collection-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M4 5.5C4 4.7 4.7 4 5.5 4H18v14.5H5.5A1.5 1.5 0 0 0 4 20V5.5Z"/>
+                <path d="M4 18.5A1.5 1.5 0 0 1 5.5 17H18"/>
+                <circle cx="12" cy="10" r="2.4"/>
+                <path d="m14 12 2 2"/>
+              </svg>
+            </div>
+            <div class="collection-order">٠١</div>
+          </div>
+          <h3>كتب علوم الحديث</h3>
+          <p>
+            أصول الرواية ومصطلح الحديث: من رسالة أبي داود ومعرفة علوم الحديث للحاكم،
+            إلى مقدمة ابن الصلاح وألفية العراقي، ونزهة النظر، وتدريب الراوي،
+            والدراسات الحديثة في المصطلح.
+          </p>
+          <div class="collection-tags">
+            <span class="collection-tag">مصطلح</span>
+            <span class="collection-tag">أصول الرواية</span>
+            <span class="collection-tag">دراسات</span>
+          </div>
+          <div class="collection-foot">
+            <div class="collection-count"><b>١٤٠+</b><span>كتابًا</span></div>
+            <span class="collection-arrow">
+              دخول الفهرس
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <!-- 2 -->
+    <article class="collection" style="animation-delay:.12s">
+      <a class="collection-link" href="kutub-al-sunnah.html">
+        <div class="collection-body">
+          <div class="collection-top">
+            <div class="collection-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M4 5.5C4 4.7 4.7 4 5.5 4H18v16H5.5A1.5 1.5 0 0 0 4 21.5V5.5Z"/>
+                <path d="M4 18.5A1.5 1.5 0 0 1 5.5 17H18"/>
+                <path d="M8 8h7M8 11h5M8 14h7"/>
+              </svg>
+            </div>
+            <div class="collection-order">٠٢</div>
+          </div>
+          <h3>كتب السنة</h3>
+          <p>
+            دواوين الحديث الأصلية: من موطأ مالك والصحاح والسنن والمسانيد،
+            إلى المصنفات والجوامع والمشيخات والأجزاء الحديثية، مرتبة على طبقات مصنفيها
+            من القرن الأول إلى الخامس عشر.
+          </p>
+          <div class="collection-tags">
+            <span class="collection-tag">صحاح</span>
+            <span class="collection-tag">سنن ومسانيد</span>
+            <span class="collection-tag">مصنفات</span>
+          </div>
+          <div class="collection-foot">
+            <div class="collection-count"><b>٢٨٠+</b><span>كتابًا</span></div>
+            <span class="collection-arrow">
+              دخول الفهرس
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <!-- 3 -->
+    <article class="collection" style="animation-delay:.19s">
+      <a class="collection-link" href="shuruh-al-hadith.html">
+        <div class="collection-body">
+          <div class="collection-top">
+            <div class="collection-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M4 5.5C4 4.7 4.7 4 5.5 4H18v16H5.5A1.5 1.5 0 0 0 4 21.5V5.5Z"/>
+                <path d="M4 18.5A1.5 1.5 0 0 1 5.5 17H18"/>
+                <path d="M11 7.5h5M9 7.5h.5M8 10.5h8M8 13.5h6"/>
+              </svg>
+            </div>
+            <div class="collection-order">٠٣</div>
+          </div>
+          <h3>شروح الحديث</h3>
+          <p>
+            شروح دواوين السنة: من معالم السنن وأعلام الحديث، إلى فتح الباري
+            وشرح النووي على مسلم، وعمدة القاري، وفتح المغيث، وشرح الموطأ،
+            وحواشي المحدثين على الكتب الستة.
+          </p>
+          <div class="collection-tags">
+            <span class="collection-tag">شروح الصحاح</span>
+            <span class="collection-tag">حواشٍ</span>
+            <span class="collection-tag">تعليقات</span>
+          </div>
+          <div class="collection-foot">
+            <div class="collection-count"><b>١٣٠+</b><span>كتابًا</span></div>
+            <span class="collection-arrow">
+              دخول الفهرس
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <!-- 4 -->
+    <article class="collection" style="animation-delay:.26s">
+      <a class="collection-link" href="takhrij-wa-atraf.html">
+        <div class="collection-body">
+          <div class="collection-top">
+            <div class="collection-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <rect x="3" y="4" width="8" height="6" rx="1.4"/>
+                <rect x="13" y="14" width="8" height="6" rx="1.4"/>
+                <path d="M7 10v4a2 2 0 0 0 2 2h4"/>
+                <path d="M17 14V9.5a1.5 1.5 0 0 0-1.5-1.5H13"/>
+              </svg>
+            </div>
+            <div class="collection-order">٠٤</div>
+          </div>
+          <h3>كتب التخريج والأطراف</h3>
+          <p>
+            علم تخريج الحديث وأطرافه: من تحفة الأشراف للمزي وإتحاف المهرة لابن حجر،
+            إلى نصب الراية والتلخيص الحبير، وإرواء الغليل، والمقاصد الحسنة،
+            والدراسات في التخريج والأطراف.
+          </p>
+          <div class="collection-tags">
+            <span class="collection-tag">أطراف</span>
+            <span class="collection-tag">تخريج</span>
+            <span class="collection-tag">زوائد</span>
+          </div>
+          <div class="collection-foot">
+            <div class="collection-count"><b>١٢٥+</b><span>كتابًا</span></div>
+            <span class="collection-arrow">
+              دخول الفهرس
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <!-- 5 -->
+    <article class="collection" style="animation-delay:.33s">
+      <a class="collection-link" href="al-illal-wa-sualat.html">
+        <div class="collection-body">
+          <div class="collection-top">
+            <div class="collection-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M12 3l7 4.5v9L12 21l-7-4.5v-9L12 3Z"/>
+                <path d="M12 8.5v7M9 12h6"/>
+              </svg>
+            </div>
+            <div class="collection-order">٠٥</div>
+          </div>
+          <h3>كتب العلل والسؤلات الحديثية</h3>
+          <p>
+            علم العلل الخفيّة والسؤالات: من علل ابن المديني وأحمد وابن أبي حاتم
+            والدارقطني، إلى سؤالات الأئمة كابن معين وأبي داود والحاكم،
+            وكتب الموضوعات والمناكير والدراسات في العلل.
+          </p>
+          <div class="collection-tags">
+            <span class="collection-tag">علل</span>
+            <span class="collection-tag">سؤالات</span>
+            <span class="collection-tag">موضوعات</span>
+          </div>
+          <div class="collection-foot">
+            <div class="collection-count"><b>٩٠+</b><span>كتابًا</span></div>
+            <span class="collection-arrow">
+              دخول الفهرس
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+            </span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+  </section>
+
+</main>
+
+<footer id="about">
+  <div class="shell">
+    <span class="f-brand">المكتبة الحديثية</span>
+    بوابة جامعة لفهارس كتب الحديث وعلومه — البيانات والأوصاف مستندة إلى موقع المكتبة الشاملة.
+    <div class="f-links">
+      <a href="ulum-al-hadith.html">علوم الحديث</a>
+      <a href="kutub-al-sunnah.html">كتب السنة</a>
+      <a href="shuruh-al-hadith.html">شروح الحديث</a>
+      <a href="takhrij-wa-atraf.html">التخريج والأطراف</a>
+      <a href="al-illal-wa-sualat.html">العلل والسؤلات</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
