@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>كتب التخريج والأطراف — مكتبة التخريج</title>
+<meta name="description" content="فهرس أنيق لكتب التخريج والأطراف مرتبة زمنيًا حسب وفاة المصنفين، مع بطاقات وأكورديون مستقل لكل كتاب." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#070a0f;
+    --ink-2:#0b1017;
+    --panel:#0e151e;
+    --panel-2:#121b26;
+    --panel-3:#16212e;
+    --line:rgba(201,162,39,.22);
+    --line-soft:rgba(255,255,255,.07);
+    --gold:#c9a227;
+    --gold-2:#f0d78c;
+    --gold-3:#8a6d16;
+    --cream:#f6f1e7;
+    --muted:#9aa6b2;
+    --muted-2:#73808d;
+    --radius:20px;
+    --shadow:0 24px 70px rgba(0,0,0,.45);
+    --font-display:'Scheherazade New',serif;
+    --font-ui:'Scheherazade New',serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    min-height:100vh;
+    color:var(--cream);
+    font-family:var(--font-ui);
+    font-size:1.05rem;
+    line-height:1.95;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(201,162,39,.13), transparent 60%),
+      radial-gradient(900px 500px at 0% 10%, rgba(58,96,140,.18), transparent 55%),
+      radial-gradient(1000px 700px at 50% 110%, rgba(201,162,39,.07), transparent 60%),
+      linear-gradient(180deg,#070a0f 0%,#080c12 45%,#070a0f 100%);
+    background-attachment:fixed;
+    text-rendering:optimizeLegibility;
+  }
+  b, strong, h1, h2, h3, h4, summary { font-weight:400; }
+  body::before{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.16;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23c9a227' stroke-width='.7'%3E%3Cpath d='M60 8l14 24 28 4-20 20 5 28-27-14-27 14 5-28L18 36l28-4z'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:240px 240px;
+    mask-image:radial-gradient(circle at 50% 0%,#000 0%,transparent 75%);
+  }
+  ::selection{background:rgba(201,162,39,.35);color:#fff}
+  a{color:inherit;text-decoration:none}
+  button,input{font:inherit;font-family:inherit}
+  .shell{position:relative;z-index:1;width:min(1480px,94vw);margin:0 auto}
+
+  /* ===== Header ===== */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(18px);
+    background:linear-gradient(180deg,rgba(7,10,15,.92),rgba(7,10,15,.72));
+    border-bottom:1px solid var(--line-soft);
+  }
+  .topbar-inner{
+    display:flex;align-items:center;gap:18px;justify-content:space-between;
+    padding:14px 0;
+  }
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand-mark{
+    width:44px;height:44px;flex:none;border-radius:14px;
+    display:grid;place-items:center;
+    background:linear-gradient(145deg,rgba(201,162,39,.18),rgba(201,162,39,.04));
+    border:1px solid var(--line);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    color:var(--gold-2);
+  }
+  .brand-mark svg{width:22px;height:22px}
+  .brand-text b{
+    display:block;font-family:var(--font-display);font-size:1.45rem;
+    color:var(--cream);white-space:nowrap;line-height:1.3;
+  }
+  .brand-text span{display:block;font-size:.85rem;color:var(--muted-2)}
+  .search-wrap{position:relative;flex:1;max-width:430px}
+  .search-wrap svg{
+    position:absolute;right:14px;top:50%;transform:translateY(-50%);
+    width:18px;height:18px;color:var(--muted-2);pointer-events:none;
+  }
+  #search{
+    width:100%;padding:12px 44px 12px 14px;
+    border-radius:999px;border:1px solid var(--line-soft);
+    background:rgba(255,255,255,.035);color:var(--cream);
+    outline:none;transition:.25s;
+    font-size:1rem;
+  }
+  #search::placeholder{color:var(--muted-2)}
+  #search:focus{
+    border-color:rgba(201,162,39,.55);
+    background:rgba(201,162,39,.05);
+    box-shadow:0 0 0 4px rgba(201,162,39,.08);
+  }
+
+  /* ===== Hero ===== */
+  .hero{padding:64px 0 34px;text-align:center;position:relative}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.85rem;color:var(--gold-2);
+    margin-bottom:18px;
+  }
+  .eyebrow::before,.eyebrow::after{
+    content:"";width:34px;height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .hero h1{
+    margin:0 auto;max-width:900px;
+    font-family:var(--font-display);
+    font-size:clamp(2.9rem,6.2vw,5rem);
+    line-height:1.25;
+    background:linear-gradient(180deg,#fffaf0 0%,#f0d78c 55%,#b9921f 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 18px 50px rgba(201,162,39,.12);
+  }
+  .hero p{
+    max-width:720px;margin:18px auto 0;color:var(--muted);
+    font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.85;
+  }
+  .ornament{
+    width:min(420px,70vw);height:26px;margin:26px auto 0;
+    display:flex;align-items:center;gap:12px;color:var(--gold);
+    opacity:.8;
+  }
+  .ornament::before,.ornament::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .ornament i{width:9px;height:9px;transform:rotate(45deg);border:1px solid var(--gold);display:block}
+  .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+  .stat{
+    min-width:150px;padding:14px 22px;border-radius:16px;
+    border:1px solid var(--line-soft);
+    background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+  }
+  .stat b{display:block;font-family:var(--font-display);font-size:1.95rem;color:var(--gold-2);line-height:1.2}
+  .stat span{font-size:.88rem;color:var(--muted-2)}
+
+  /* ===== Toolbar ===== */
+  .toolbar{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    gap:14px;margin:10px 0 22px;padding:14px 18px;
+    border:1px solid var(--line-soft);border-radius:16px;
+    background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01));
+  }
+  .toolbar-note{font-size:.95rem;color:var(--muted-2)}
+  .toolbar-note b{color:var(--gold-2)}
+  .reset{
+    border:1px solid var(--line);border-radius:999px;padding:8px 20px;
+    background:transparent;color:var(--gold-2);cursor:pointer;transition:.25s;
+    font-size:.95rem;
+  }
+  .reset:hover{background:rgba(201,162,39,.1);border-color:rgba(201,162,39,.5)}
+
+  /* ===== Grid & Cards ===== */
+  .grid{
+    display:grid;gap:24px;
+    grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
+    padding-bottom:70px;
+  }
+  .card{
+    position:relative;border-radius:var(--radius);
+    border:1px solid var(--line-soft);
+    background:
+      radial-gradient(600px 200px at 80% -20%,rgba(201,162,39,.1),transparent 60%),
+      linear-gradient(180deg,var(--panel),var(--ink-2));
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+    animation:rise .6s both;
+  }
+  .card::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    opacity:.75;
+  }
+  .card:hover{transform:translateY(-4px);border-color:rgba(201,162,39,.32);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .card[hidden]{display:none}
+  .card[open]{border-color:rgba(201,162,39,.36);transform:translateY(-2px)}
+
+  /* ---- البطاقة كأكورديون مستقل ---- */
+  .card-head{
+    list-style:none;
+    cursor:pointer;
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:14px;
+    padding:20px;
+    position:relative;
+    outline:none;
+  }
+  .card-head::-webkit-details-marker{display:none}
+  .card-head:focus-visible{
+    box-shadow:inset 0 0 0 2px rgba(201,162,39,.35);
+    border-radius:var(--radius);
+  }
+  .card-info{min-width:0}
+  .card-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.82rem;color:var(--gold-2);
+    border:1px solid var(--line);border-radius:999px;padding:4px 14px;
+    background:rgba(201,162,39,.06);
+  }
+  .badge i{width:5px;height:5px;border-radius:50%;background:var(--gold);display:block}
+  .range{font-size:.85rem;color:var(--muted-2);white-space:nowrap}
+  .card-title{
+    margin:0;font-family:var(--font-display);
+    font-size:1.5rem;line-height:1.55;color:var(--cream);
+    display:block;
+  }
+  .card-sub{margin:4px 0 0;font-size:.92rem;color:var(--muted-2)}
+  .card-sub b{color:var(--muted)}
+  .card-chev{
+    width:40px;height:40px;border-radius:50%;
+    display:grid;place-items:center;
+    border:1px solid rgba(255,255,255,.1);
+    color:var(--muted);
+    transition:transform .35s ease,color .35s,border-color .35s,background .35s;
+    flex:none;
+  }
+  .card-chev svg{width:16px;height:16px}
+  .card[open] .card-chev{
+    transform:rotate(180deg);
+    color:var(--gold-2);
+    border-color:rgba(201,162,39,.5);
+    background:rgba(201,162,39,.12);
+  }
+  .card[open]::before{opacity:1}
+
+  /* ---- كتب البطاقة ---- */
+  .book-list{padding:10px 12px 14px;display:flex;flex-direction:column;gap:8px}
+  .card[open] .book-list{animation:fade .4s both}
+
+  details.book{
+    border:1px solid rgba(255,255,255,.055);
+    border-radius:13px;
+    background:linear-gradient(180deg,rgba(255,255,255,.032),rgba(255,255,255,.012));
+    transition:border-color .28s,background .28s,box-shadow .28s;
+  }
+  details.book:hover{border-color:rgba(201,162,39,.25);background:rgba(255,255,255,.04)}
+  details.book[open]{
+    border-color:rgba(201,162,39,.42);
+    background:linear-gradient(180deg,rgba(201,162,39,.06),rgba(255,255,255,.015));
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+  }
+  details.book[hidden]{display:none}
+  details.book summary{
+    list-style:none;cursor:pointer;
+    display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;
+    padding:12px 13px;border-radius:12px;outline:none;
+  }
+  details.book summary::-webkit-details-marker{display:none}
+  details.book summary:focus-visible{box-shadow:0 0 0 3px rgba(201,162,39,.25)}
+  .num{
+    width:32px;height:32px;flex:none;border-radius:10px;
+    display:grid;place-items:center;
+    font-size:.88rem;color:var(--gold-2);
+    border:1px solid var(--line);
+    background:rgba(201,162,39,.07);
+    font-variant-numeric:tabular-nums;
+    line-height:1;
+  }
+  .book-main{min-width:0}
+  .book-title{
+    display:block;font-size:1.08rem;color:var(--cream);
+    line-height:1.65;overflow:hidden;text-overflow:ellipsis;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  }
+  .book-author{
+    display:block;margin-top:2px;font-size:.88rem;color:var(--muted-2);
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .chev{
+    width:28px;height:28px;flex:none;border-radius:50%;
+    display:grid;place-items:center;
+    border:1px solid rgba(255,255,255,.09);
+    color:var(--muted);
+    transition:transform .3s ease,color .3s,border-color .3s,background .3s;
+  }
+  .chev svg{width:13px;height:13px}
+  details.book[open] .chev{
+    transform:rotate(180deg);
+    color:var(--gold-2);border-color:rgba(201,162,39,.45);
+    background:rgba(201,162,39,.1);
+  }
+  .book-body{
+    padding:2px 14px 15px 14px;
+    border-top:1px dashed rgba(201,162,39,.18);
+    margin:0 12px;
+    animation:fade .35s both;
+  }
+  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 10px}
+  .meta{
+    padding:8px 10px;border-radius:10px;
+    border:1px solid rgba(255,255,255,.055);
+    background:rgba(0,0,0,.18);
+  }
+  .meta span{display:block;font-size:.78rem;color:var(--muted-2);margin-bottom:2px}
+  .meta b{display:block;font-size:.95rem;color:var(--cream);line-height:1.55}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .tag{
+    font-size:.78rem;padding:3px 11px;border-radius:999px;
+    color:var(--gold-2);border:1px solid rgba(201,162,39,.24);
+    background:rgba(201,162,39,.06);
+  }
+  .desc{margin:0 0 12px;font-size:.95rem;color:var(--muted);line-height:1.9}
+  .open-link{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 18px;border-radius:999px;
+    border:1px solid rgba(201,162,39,.45);
+    color:var(--gold-2);font-size:.92rem;
+    background:linear-gradient(180deg,rgba(201,162,39,.12),rgba(201,162,39,.03));
+    transition:.28s;
+  }
+  .open-link:hover{background:rgba(201,162,39,.2);border-color:var(--gold);color:#fff}
+  .open-link svg{width:13px;height:13px}
+
+  .empty{
+    grid-column:1/-1;text-align:center;padding:70px 20px;
+    border:1px dashed var(--line);border-radius:var(--radius);
+    color:var(--muted-2);background:rgba(255,255,255,.015);
+  }
+  .empty b{display:block;font-family:var(--font-display);font-size:1.6rem;color:var(--gold-2);margin-bottom:6px}
+
+  /* ===== Footer ===== */
+  footer{
+    border-top:1px solid var(--line-soft);
+    padding:34px 0 46px;text-align:center;color:var(--muted-2);font-size:.9rem;
+  }
+  footer .f-brand{
+    font-family:var(--font-display);font-size:1.4rem;color:var(--gold-2);
+    display:block;margin-bottom:6px;
+  }
+  footer a{border-bottom:1px solid rgba(201,162,39,.25);padding-bottom:1px}
+  footer a:hover{color:var(--gold-2)}
+
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+  @media (max-width:720px){
+    .topbar-inner{flex-wrap:wrap;gap:10px}
+    .search-wrap{max-width:none;order:3;flex-basis:100%}
+    .brand-text span{display:none}
+    .hero{padding:44px 0 24px}
+    .grid{grid-template-columns:1fr;gap:18px}
+    .card-head{padding:18px 16px 14px}
+    .meta-grid{grid-template-columns:1fr 1fr}
+    .stat{min-width:120px;padding:12px 16px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M4 6.5C4 5.1 5.1 4 6.5 4H20v15.5H6.5A2.5 2.5 0 0 0 4 22V6.5Z"/>
+          <path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/>
+          <path d="M8 8h8M8 11.5h5"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <b>كتب التخريج والأطراف</b>
+        <span>مكتبة التخريج</span>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+      </svg>
+      <label for="search" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">بحث في الكتب</label>
+      <input id="search" type="search" placeholder="ابحث باسم الكتاب أو المصنف…" autocomplete="off" />
+    </div>
+  </div>
+</header>
+
+<main class="shell">
+  <section class="hero">
+    <span class="eyebrow">فهرس زمني</span>
+    <h1 style="line-height: 1.75;">كتب التخريج والأطراف</h1>
+    <p>كتب التخريج وأطراف الحديث مرتبة على تواريخ وفاة مصنفيها، في بطاقات من عشرة كتب، مع أكورديون مستقل لكل بطاقة وكل كتاب.</p>
+    <div class="ornament" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="stats" id="stats">
+      <div class="stat"><b id="stat-books">—</b><span>كتابًا</span></div>
+      <div class="stat"><b id="stat-authors">—</b><span>مصنفًا</span></div>
+      <div class="stat"><b id="stat-centuries">—</b><span>قرنًا هجريًا</span></div>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <div class="toolbar-note">عرض <b id="visible-count">—</b> من أصل <b id="total-count">—</b> كتابًا</div>
+    <button class="reset" id="reset" type="button">إعادة ضبط البحث</button>
+  </div>
+
+  <div class="grid" id="grid" aria-live="polite"></div>
+</main>
+
+<footer>
+  <div class="shell">
+    <span class="f-brand">المكتبة الشاملة</span>
+    نسخة فهرسية أنيقة لكتب التخريج والأطراف — البيانات والأوصاف من موقع
+    <a href="https://shamela.ws/" target="_blank" rel="noopener">shamela.ws</a>.
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   البيانات: العنوان | المصنف | سنة الوفاة (هجري)
+   ============================================================ */
+const BOOK_URLS = {
+  "أحاديث الموطأ وذكر اتفاق الرواة عن مالك واختلافهم": "https://shamela.ws/book/1518",
+  "الإيماء إلى أطراف أحاديث كتاب الموطأ": "https://shamela.ws/book/127660",
+  "بيان الوهم والإيهام في كتاب الأحكام": "https://shamela.ws/book/5923",
+  "أحاديث القصاص": "https://shamela.ws/book/22812",
+  "تحفة الأشراف بمعرفة الأطراف": "https://shamela.ws/book/11385",
+  "الرد على ابن القطان": "https://shamela.ws/book/9075",
+  "تنقيح التحقيق - الذهبي": "https://shamela.ws/book/22848",
+  "رسالة طرق حديث من كنت مولاه فعلي مولاه": "https://shamela.ws/book/2582",
+  "الجوهر النقي على سنن البيهقي": "https://shamela.ws/book/1184",
+  "النقد الصحيح لما اعترض من أحاديث المصابيح": "https://shamela.ws/book/8602",
+  "نصب الراية": "https://shamela.ws/book/11428",
+  "منار الإسلام بترتيب كتاب الوهم والإيهام": "https://shamela.ws/book/30141",
+  "إرشاد الفقيه إلى معرفة أدلة التنبيه": "https://shamela.ws/book/260",
+  "تحفة الطالب بمعرفة أحاديث مختصر ابن الحاجب": "https://shamela.ws/book/9978",
+  "تحفة المحتاج إلى أدلة المنهاج": "https://shamela.ws/book/5911",
+  "تذكرة المحتاج إلى أحاديث المنهاج": "https://shamela.ws/book/9569",
+  "خلاصة البدر المنير": "https://shamela.ws/book/21104",
+  "مختصر تلخيص الذهبي لمستدرك الحاكم": "https://shamela.ws/book/96551",
+  "المغني عن حمل الأسفار": "https://shamela.ws/book/21550",
+  "عجالة الإملاء على الترغيب والترهيب": "https://shamela.ws/book/97928",
+  "إتحاف الخيرة المهرة بزوائد المسانيد العشرة": "https://shamela.ws/book/21765",
+  "إتحاف المهرة بالفوائد المبتكرة": "https://shamela.ws/book/26324",
+  "إطراف المسند المعتلي": "https://shamela.ws/book/12220",
+  "التلخيص الحبير - ط أضواء السلف": "https://shamela.ws/book/123608",
+  "التلخيص الحبير - ط العلمية": "https://shamela.ws/book/1581",
+  "التلخيص الحبير - ط قرطبة": "https://shamela.ws/book/21601",
+  "الدراية في تخريج أحاديث الهداية": "https://shamela.ws/book/5908",
+  "القول المسدد في الذب عن مسند أحمد": "https://shamela.ws/book/6035",
+  "الكلام على حديث امرأتي لا ترد يد لامس": "https://shamela.ws/book/11057",
+  "المنتخب من أمالي ابن حجر": "https://shamela.ws/book/11118",
+  "تخريج حديث الأسماء الحسنى": "https://shamela.ws/book/30718",
+  "تغليق التعليق": "https://shamela.ws/book/347",
+  "جزء في طرق حديث لا تسبوا أصحابي": "https://shamela.ws/book/30733",
+  "قطعة من نتائج الأفكار": "https://shamela.ws/book/30109",
+  "موافقة الخبر الخبر": "https://shamela.ws/book/18611",
+  "نتائج الأفكار في تخريج أحاديث الأذكار": "https://shamela.ws/book/30108",
+  "التعريف والإخبار بتخريج أحاديث الاختيار": "https://shamela.ws/book/30086",
+  "الأجوبة المرضية فيما سئل السخاوي": "https://shamela.ws/book/17878",
+  "التخريج الصغير والتحبير الكبير": "https://shamela.ws/book/17531",
+  "الدرر المنتثرة في الأحاديث المشتهرة": "https://shamela.ws/book/21542",
+  "تحفة الأبرار بنكت الأذكار": "https://shamela.ws/book/21560",
+  "مناهل الصفا في تخريج أحاديث الشفا": "https://shamela.ws/book/95829",
+  "الفتح السماوي": "https://shamela.ws/book/8635",
+  "إتحاف ما يحسن من الأخبار الدائرة على الألسن": "https://shamela.ws/book/1480",
+  "كشف الخفاء - ت هنداوي": "https://shamela.ws/book/9576",
+  "كشف الخفاء - ط القدسي": "https://shamela.ws/book/856",
+  "تخريج أحاديث إحياء علوم الدين": "https://shamela.ws/book/38171",
+  "الفوائد المجموعة": "https://shamela.ws/book/2671",
+  "أسنى المطالب": "https://shamela.ws/book/6076",
+  "ديل القول المسدد": "https://shamela.ws/book/8637",
+  "نظم المتناثر": "https://shamela.ws/book/7016",
+  "تحقيق إزالة الدهش": "https://shamela.ws/book/188",
+  "المداوي لعلل الجامع الصغير": "https://shamela.ws/book/17527",
+  "الهداية في تخريج أحاديث البداية": "https://shamela.ws/book/16738",
+  "التعليق على الأربعين في التصوف": "https://shamela.ws/book/413",
+  "نظرات في حديث أصحابي كالنجوم": "https://shamela.ws/book/4365",
+  "تنبيهات على تحريفات": "https://shamela.ws/book/10108",
+  "تنبيه القارئ لتقوية ما ضعفه الألباني": "https://shamela.ws/book/10618",
+  "تخريج أحاديث وآثار في ظلال القرآن": "https://shamela.ws/book/2615",
+  "الانتهاء لمعرفة الأحاديث": "https://shamela.ws/book/96948",
+  "تخريج أحاديث فضائل الشام ودمشق": "https://shamela.ws/book/11737",
+  "مساجلة علمية": "https://shamela.ws/book/702",
+  "سلسلة الأحاديث الضعيفة والموضوعة": "https://shamela.ws/book/12762",
+  "صحيح سنن أبي داود": "https://shamela.ws/book/25881",
+  "نصب المجانيق": "https://shamela.ws/book/7329",
+  "تخريج الأحاديث المرفوعة": "https://shamela.ws/book/8223",
+  "فتح ذي الجلال": "https://shamela.ws/book/30080",
+  "إبراهيم بن محمد بن سفيان": "https://shamela.ws/book/12158",
+  "عجالة الراغب المتمني": "https://shamela.ws/book/123672",
+  "زيادات القطيعي": "https://shamela.ws/book/4262",
+  "نقد كتاب الروض البسام": "https://shamela.ws/book/14315",
+  "مرويات المزاح والدعابة": "https://shamela.ws/book/744",
+  "نزهة الألباب": "https://shamela.ws/book/17355",
+  "الأحاديث الواردة في فضائل الصحابة": "https://shamela.ws/book/133",
+  "زوائد الأحاديث الواردة في فضائل الصحابة": "https://shamela.ws/book/646",
+  "سلسلة الآثار الصحيحة": "https://shamela.ws/book/10442",
+  "الانتباه لما قال الحاكم": "https://shamela.ws/book/17348",
+  "تبييض الصحيفة": "https://shamela.ws/book/10280",
+  "أحاديث تعظيم الربا على الزنا": "https://shamela.ws/book/14606",
+  "إسعاف اللبيب بفتاوى الحديث": "https://shamela.ws/book/908",
+  "المنيحة بسلسة الأحاديث الصحيحة": "https://shamela.ws/book/14316",
+  "النافلة في الأحاديث الضعيفة": "https://shamela.ws/book/10024",
+  "تنبيه الهاجد": "https://shamela.ws/book/9833",
+  "إقامة الدليل": "https://shamela.ws/book/96930",
+  "التبيان في تخريج وتبويب": "https://shamela.ws/book/32528",
+  "موسوعة بيت المقدس": "https://shamela.ws/book/647",
+  "روايات البغوي": "https://shamela.ws/book/132397",
+  "مرويات فضائل علي": "https://shamela.ws/book/265",
+  "الأحاديث الواردة في اللعب والرياضة": "https://shamela.ws/book/739",
+  "التحجيل في تخريج ما لم يخرج": "https://shamela.ws/book/8618",
+  "تخريج حديث لا يرث المسلم الكافر": "https://shamela.ws/book/849",
+  "تراجعات الألباني": "https://shamela.ws/book/8217",
+  "التكميل لما فات": "https://shamela.ws/book/9105",
+  "النجم المضيء": "https://shamela.ws/book/838",
+  "الأحاديث الواردة في أحسن الناس": "https://shamela.ws/book/30032",
+  "الأحاديث الواردة في الابتلاء": "https://shamela.ws/book/30033",
+  "الأحاديث الواردة في التحذير من الشرك": "https://shamela.ws/book/30034",
+  "الأحاديث الواردة في العين": "https://shamela.ws/book/30035",
+  "الأحاديث الواردة في ذكر أحكام الشيب": "https://shamela.ws/book/30036",
+  "سلسلة الفوائد الحديثية": "https://shamela.ws/book/1146",
+  "تنقيح التحقيق في أحاديث التعليق - ط أضواء السلف": "https://shamela.ws/book/10657",
+  "تخريج أحاديث وآثار الكشاف": "https://shamela.ws/book/8636",
+  "اللآلي المنثورة في الأحاديث المشهورة": "https://shamela.ws/book/6061",
+  "البدر المنير": "https://shamela.ws/book/5922",
+  "إرواء الغليل": "https://shamela.ws/book/22592",
+  "غاية المرام": "https://shamela.ws/book/682",
+  "نقد بصوص حديثية": "https://shamela.ws/book/133363",
+  "رد الحميل في الذب": "https://shamela.ws/book/96928",
+  "بذل الإحسان": "https://shamela.ws/book/13243",
+  "ديوان السنة": "https://shamela.ws/book/16",
+  "روضة الممتع": "https://shamela.ws/book/798",
+  "فصل الرحيم الودود": "https://shamela.ws/book/261",
+  "الروض البسام": "https://shamela.ws/book/122405"
+};
+const RAW = `
+أحاديث الموطأ وذكر اتفاق الرواة عن مالك واختلافهم|الدارقطني|385
+الإيماء إلى أطراف أحاديث كتاب الموطأ|أبو العباس الداني|532
+بيان الوهم والإيهام في كتاب الأحكام|ابن القطان الفاسي|628
+أحاديث القصاص|ابن تيمية|728
+تحفة الأشراف بمعرفة الأطراف|المزي|742
+تنقيح التحقيق في أحاديث التعليق - ط أضواء السلف|ابن عبد الهادي|744
+الرد على ابن القطان|شمس الدين الذهبي|748
+تنقيح التحقيق - الذهبي|شمس الدين الذهبي|748
+رسالة طرق حديث من كنت مولاه فعلي مولاه|شمس الدين الذهبي|748
+الجوهر النقي على سنن البيهقي|ابن التركماني|750
+النقد الصحيح لما اعترض من أحاديث المصابيح|صلاح الدين العلائي|761
+تخريج أحاديث وآثار الكشاف|جمال الدين الزيلعي|762
+نصب الراية|جمال الدين الزيلعي|762
+منار الإسلام بترتيب كتاب الوهم والإيهام|مغلطاي|762
+إرشاد الفقيه إلى معرفة أدلة التنبيه|ابن كثير|774
+تحفة الطالب بمعرفة أحاديث مختصر ابن الحاجب|ابن كثير|774
+اللآلي المنثورة في الأحاديث المشهورة|بدر الدين الزركشي|794
+البدر المنير|ابن الملقن|804
+تحفة المحتاج إلى أدلة المنهاج|ابن الملقن|804
+تذكرة المحتاج إلى أحاديث المنهاج|ابن الملقن|804
+خلاصة البدر المنير|ابن الملقن|804
+مختصر تلخيص الذهبي لمستدرك الحاكم|ابن الملقن|804
+المغني عن حمل الأسفار|العراقي|806
+عجالة الإملاء على الترغيب والترهيب|البلقاني|810
+إتحاف الخيرة المهرة بزوائد المسانيد العشرة|البوصيري|840
+إتحاف المهرة بالفوائد المبتكرة|ابن حجر العسقلاني|852
+إطراف المسند المعتلي|ابن حجر العسقلاني|852
+التلخيص الحبير - ط أضواء السلف|ابن حجر العسقلاني|852
+التلخيص الحبير - ط العلمية|ابن حجر العسقلاني|852
+التلخيص الحبير - ط قرطبة|ابن حجر العسقلاني|852
+الدراية في تخريج أحاديث الهداية|ابن حجر العسقلاني|852
+القول المسدد في الذب عن مسند أحمد|ابن حجر العسقلاني|852
+الكلام على حديث امرأتي لا ترد يد لامس|ابن حجر العسقلاني|852
+المنتخب من أمالي ابن حجر|ابن حجر العسقلاني|852
+تخريج حديث الأسماء الحسنى|ابن حجر العسقلاني|852
+تغليق التعليق|ابن حجر العسقلاني|852
+جزء في طرق حديث لا تسبوا أصحابي|ابن حجر العسقلاني|852
+قطعة من نتائج الأفكار|ابن حجر العسقلاني|852
+موافقة الخبر الخبر|ابن حجر العسقلاني|852
+نتائج الأفكار في تخريج أحاديث الأذكار|ابن حجر العسقلاني|852
+التعريف والإخبار بتخريج أحاديث الاختيار|ابن قطلوبغا|879
+الأجوبة المرضية فيما سئل السخاوي|السخاوي|902
+المقاصد الحسنة - ت الخشت|السخاوي|902
+المقاصد الحسنة - ت العمارى|السخاوي|902
+المقاصد الحسنة - ط الميمنية|السخاوي|902
+التخريج الصغير والتحبير الكبير|ابن المبرد|909
+الدرر المنتثرة في الأحاديث المشتهرة|الجلال السيوطي|911
+تحفة الأبرار بنكت الأذكار|الجلال السيوطي|911
+مناهل الصفا في تخريج أحاديث الشفا|الجلال السيوطي|911
+الفتح السماوي|عبد الرؤوف المناوي|1031
+إتحاف ما يحسن من الأخبار الدائرة على الألسن|نجم الدين الغزي|1061
+كشف الخفاء - ت هنداوي|العجلوني|1162
+كشف الخفاء - ط القدسي|العجلوني|1162
+تخريج أحاديث إحياء علوم الدين|العراقي والزبيدي|1205
+الفوائد المجموعة|الشوكاني|1250
+أسنى المطالب|الحوت|1277
+ديل القول المسدد|المدراسي|1280
+نظم المتناثر|الكتاني|1345
+تحقيق إزالة الدهش|القادري|1350
+المداوي لعلل الجامع الصغير|الغماري|1380
+الهداية في تخريج أحاديث البداية|الغماري|1380
+التعليق على الأربعين في التصوف|المعلمي|1386
+نظرات في حديث أصحابي كالنجوم|صالح بن سعيد|1390
+تنبيهات على تحريفات|عاصم عبد الله|1400
+تنبيه القارئ لتقوية ما ضعفه الألباني|عبد الله الدويش|1409
+تخريج أحاديث وآثار في ظلال القرآن|علوي الشقاف|1416
+الانتهاء لمعرفة الأحاديث|عبد السلام علوش|1416
+الإعلام في إبصار|فهد السند|1417
+إرواء الغليل|ناصر الدين الألباني|1420
+تخريج أحاديث فضائل الشام ودمشق|ناصر الدين الألباني|1420
+مساجلة علمية|ناصر الدين الألباني|1420
+سلسلة الأحاديث الضعيفة والموضوعة|ناصر الدين الألباني|1420
+صحيح سنن أبي داود|ناصر الدين الألباني|1420
+غاية المرام|ناصر الدين الألباني|1420
+نصب المجانيق|ناصر الدين الألباني|1420
+نقد بصوص حديثية|ناصر الدين الألباني|1420
+تخريج الأحاديث المرفوعة|محمد بن عبد الكريم|1420
+فتح ذي الجلال|عبد المنعم إبراهيم|1420
+إبراهيم بن محمد بن سفيان|عبد الله دفعو|1421
+عجالة الراغب المتمني|الهلالي|1422
+زيادات القطيعي|دخيل الله الجديدان|1423
+نقد كتاب الروض البسام|محمد صباح منصور|1423
+مرويات المزاح والدعابة|فهد العتيبي|1424
+أنس الساري|نبيل البصارة|1426
+نزهة الألباب|الوائلي|1426
+الأحاديث الواردة في فضائل الصحابة|سعود الصاعدي|1427
+زوائد الأحاديث الواردة في فضائل الصحابة|سعود الصاعدي|1427
+سلسلة الآثار الصحيحة|الداني آل زهوي|1427
+الانتباه لما قال الحاكم|محمد عطية|1428
+أحاديث وموبوءات في الميزان - 1|عبد اللطيف|1429
+أحاديث وموبوءات في الميزان - 2|عبد اللطيف|1429
+تبييض الصحيفة|عبد اللطيف|1429
+أحاديث تعظيم الربا على الزنا|علي الصباح|1430
+تخريج أثر حياة الحيوان|المدهيش|1431
+رد الحميل في الذب|عبد الله العيصلان|1431
+إسعاف اللبيب بفتاوى الحديث|أبو إسحاق الحويني|1432
+المنيحة بسلسة الأحاديث الصحيحة|أبو إسحاق الحويني|1432
+النافلة في الأحاديث الضعيفة|أبو إسحاق الحويني|1432
+بذل الإحسان|أبو إسحاق الحويني|1432
+تنبيه الهاجد|أبو إسحاق الحويني|1432
+إقامة الدليل|أحمد العبيس|1432
+التبيان في تخريج وتبويب|خالد الشلاحي|1433
+موسوعة بيت المقدس|أحمد بن سليمان|1434
+روايات البغوي|عبد الحميد شيخون|1435
+مرويات فضائل علي|أحمد الحابري|1435
+الأحاديث الواردة في اللعب والرياضة|صالح الهلال|1435
+الترباق|عمرو الحويني|1436
+إن الله نزع بالسلطان|المدهيش|1439
+التحجيل في تخريج ما لم يخرج|عبد العزيز الطريفي|1440
+تخريج حديث لا يرث المسلم الكافر|عبد الله العويل|1440
+تراجعات الألباني|أبو الحسن الشيخ|1440
+ديوان السنة|عدنان العرعور|1440
+روضة الممتع|خالد الشلاحي|1440
+التكميل لما فات|صالح آل الشيخ|1440
+النجم المضيء|غازي أفالح|1442
+الأحاديث الواردة في أحسن الناس|حسين التوبجري|1442
+الأحاديث الواردة في الابتلاء|حسين التوبجري|1443
+الأحاديث الواردة في التحذير من الشرك|حسين التوبجري|1443
+الأحاديث الواردة في العين|حسين التوبجري|1443
+الأحاديث الواردة في ذكر أحكام الشيب|حسين التوبجري|1443
+فصل الرحيم الودود|ياسر فتحي|1446
+سلسلة الفوائد الحديثية|أبو أوبس الكردي|1447
+الروض البسام|جاسم الفهيد الدوسري|1480
+`;
+
+/* ============================================================
+   الأدوات
+   ============================================================ */
+const AR_DIGITS = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+const toAr = n => String(n).replace(/\d/g, d => AR_DIGITS[+d]);
+const CENTURIES = [
+  'الأول','الثاني','الثالث','الرابع','الخامس','السادس','السابع','الثامن',
+  'التاسع','العاشر','الحادي عشر','الثاني عشر','الثالث عشر','الرابع عشر','الخامس عشر'
+];
+const centuryName = y => {
+  const c = Math.max(1, Math.ceil(y / 100));
+  return 'القرن ' + (CENTURIES[c - 1] || toAr(c)) + ' الهجري';
+};
+
+function tagsFor(title) {
+  const t = [];
+  if (/صحيح/.test(title)) t.push('صحيح');
+  if (/سنن/.test(title)) t.push('سنن');
+  if (/مسند/.test(title)) t.push('مسند');
+  if (/موطأ|الموطأ/.test(title)) t.push('موطأ');
+  if (/أربعين|الأربعين/.test(title)) t.push('أربعين');
+  if (/مصابيح|مشكاة/.test(title)) t.push('مصابيح');
+  if (/تخريج/.test(title)) t.push('تخريج');
+  if (/أطراف/.test(title)) t.push('أطراف');
+  if (!t.length) t.push('تخريج حديث');
+  return t.slice(0, 3);
+}
+
+/* ============================================================
+   تحليل البيانات
+   ============================================================ */
+const books = RAW.trim().split('\n').map(line => {
+  const [title, author, death] = line.split('|').map(s => s.trim());
+  return { title, author, death: parseInt(death, 10) };
+}).filter(b => b.title && b.author && !Number.isNaN(b.death));
+
+/* ترتيب زمني حسب وفاة المصنف */
+books.sort((a, b) => a.death - b.death || a.title.localeCompare(b.title, 'ar'));
+
+/* تقسيم إلى بطاقات من عشرة كتب */
+const groups = [];
+for (let i = 0; i < books.length; i += 10) groups.push(books.slice(i, i + 10));
+
+/* ============================================================
+   الإحصاءات
+   ============================================================ */
+const uniqueAuthors = new Set(books.map(b => b.author)).size;
+const centuries = new Set(books.map(b => Math.ceil(b.death / 100))).size;
+document.getElementById('stat-books').textContent = toAr(books.length);
+document.getElementById('stat-authors').textContent = toAr(uniqueAuthors);
+document.getElementById('stat-centuries').textContent = toAr(centuries);
+document.getElementById('total-count').textContent = toAr(books.length);
+
+/* ============================================================
+   بناء الشبكة والبطاقات
+   ============================================================ */
+const grid = document.getElementById('grid');
+
+function bookTemplate(book, indexInCard) {
+  const tags = tagsFor(book.title)
+    .map(t => `<span class="tag">${t}</span>`).join('');
+
+  /* بحث مباشر في المكتبة الشاملة */
+  const shamelaSearch = 'https://shamela.ws/search?q=' +
+    encodeURIComponent(book.title + ' ' + book.author);
+
+  return `
+    <details class="book" data-search="${(book.title + ' ' + book.author).toLowerCase()}">
+      <summary>
+        <span class="num">${toAr(indexInCard + 1)}</span>
+        <span class="book-main">
+          <span class="book-title">${book.title}</span>
+          <span class="book-author">${book.author} · ت ${toAr(book.death)}هـ</span>
+        </span>
+        <span class="chev" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </span>
+      </summary>
+      <div class="book-body">
+        <div class="meta-grid">
+          <div class="meta"><span>المصنف</span><b>${book.author}</b></div>
+          <div class="meta"><span>الوفاة</span><b>ت ${toAr(book.death)}هـ</b></div>
+          <div class="meta"><span>القرن</span><b>${centuryName(book.death)}</b></div>
+          <div class="meta"><span>النوع</span><b>تخريج وأطراف</b></div>
+        </div>
+        <div class="tags">${tags}</div>
+        <p class="desc">نسخة رقمية من «${book.title}» لـ${book.author}، ${BOOK_URLS[book.title] ? "رابط الكتاب مأخوذ من قائمة الشاملة، ويراعى اختلاف الطبعات." : "لم يتأكد رقم الكتاب من القائمة؛ استخدم البحث للتحقق من الطبعة."}</p>
+        <a class="open-link" href="${BOOK_URLS[book.title] || shamelaSearch}" target="_blank" rel="noopener">
+          تصفح الكتاب
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+    </details>
+  `;
+}
+
+const frag = document.createDocumentFragment();
+
+groups.forEach((group, gi) => {
+  const first = group[0], last = group[group.length - 1];
+  const min = first.death, max = last.death;
+
+  /* الأكورديون الرئيسي للبطاقة — مغلق افتراضيًا */
+  const card = document.createElement('details');
+  card.className = 'card';
+  card.style.animationDelay = Math.min(gi * 28, 420) + 'ms';
+
+  const range = min === max
+    ? `ت ${toAr(min)}هـ`
+    : `ت ${toAr(min)}هـ — ${toAr(max)}هـ`;
+
+  const subtitle = group.length === 1
+    ? first.author
+    : `من ${first.author} إلى ${last.author}`;
+
+  const crossCentury = Math.ceil(first.death / 100) !== Math.ceil(last.death / 100);
+  const centuryLine = centuryName(first.death) + (crossCentury ? ' وما بعده' : '');
+
+  card.innerHTML = `
+    <summary class="card-head">
+      <span class="card-info">
+        <span class="card-meta">
+          <span class="badge"><i></i> البطاقة ${toAr(gi + 1)}</span>
+          <span class="range">${range}</span>
+        </span>
+        <span class="card-title">${subtitle}</span>
+        <span class="card-sub"><b>${toAr(group.length)}</b> كتب · ${centuryLine}</span>
+      </span>
+      <span class="card-chev" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </span>
+    </summary>
+    <div class="book-list">
+      ${group.map((b, i) => bookTemplate(b, i)).join('')}
+    </div>
+  `;
+  frag.appendChild(card);
+});
+
+grid.appendChild(frag);
+
+/* ============================================================
+   البحث والتصفية
+   ============================================================ */
+const search = document.getElementById('search');
+const visibleCount = document.getElementById('visible-count');
+const cards = [...document.querySelectorAll('.card')];
+const allBooks = [...document.querySelectorAll('details.book')];
+
+function applyFilter() {
+  const q = search.value.trim().toLowerCase();
+  let visible = 0;
+
+  allBooks.forEach(el => {
+    const match = !q || el.dataset.search.includes(q);
+    el.hidden = !match;
+    if (match) visible++;
+  });
+
+  cards.forEach(card => {
+    const any = [...card.querySelectorAll('details.book')].some(el => !el.hidden);
+    card.hidden = !any;
+    if (!any) card.open = false;
+  });
+
+  /* بطاقات مفتوحة فقط عند وجود بحث فعّال، وإلا فتبقى مغلقة */
+  if (q) {
+    cards.forEach(card => {
+      if (!card.hidden) card.open = true;
+    });
+  } else {
+    cards.forEach(card => {
+      card.open = false;
+    });
+  }
+
+  visibleCount.textContent = toAr(visible);
+
+  let empty = document.querySelector('.empty');
+  if (!visible) {
+    if (!empty) {
+      empty = document.createElement('div');
+      empty.className = 'empty';
+      empty.innerHTML = '<b>لا نتائج مطابقة</b>جرّب كلمة أخرى أو أعد ضبط البحث لعرض جميع الكتب.';
+      grid.appendChild(empty);
+    }
+  } else if (empty) {
+    empty.remove();
+  }
+}
+
+let t;
+search.addEventListener('input', () => {
+  clearTimeout(t);
+  t = setTimeout(applyFilter, 120);
+});
+
+document.getElementById('reset').addEventListener('click', () => {
+  search.value = '';
+  applyFilter();
+  search.focus();
+});
+
+/* الحالة الابتدائية: جميع البطاقات وجميع الكتب مغلقة */
+applyFilter();
+</script>
+</body>
+</html>

@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>كتب علوم الحديث — مكتبة علوم الحديث</title>
+<meta name="description" content="فهرس أنيق لكتب علوم الحديث مرتبة زمنيًا حسب وفاة المصنفين، مع بطاقات وأكورديون مستقل لكل كتاب." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#070a0f;
+    --ink-2:#0b1017;
+    --panel:#0e151e;
+    --panel-2:#121b26;
+    --panel-3:#16212e;
+    --line:rgba(201,162,39,.22);
+    --line-soft:rgba(255,255,255,.07);
+    --gold:#c9a227;
+    --gold-2:#f0d78c;
+    --gold-3:#8a6d16;
+    --cream:#f6f1e7;
+    --muted:#9aa6b2;
+    --muted-2:#73808d;
+    --radius:20px;
+    --shadow:0 24px 70px rgba(0,0,0,.45);
+    --font-display:'Scheherazade New',serif;
+    --font-ui:'Scheherazade New',serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    min-height:100vh;
+    color:var(--cream);
+    font-family:var(--font-ui);
+    font-size:1.05rem;
+    line-height:1.95;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(201,162,39,.13), transparent 60%),
+      radial-gradient(900px 500px at 0% 10%, rgba(58,96,140,.18), transparent 55%),
+      radial-gradient(1000px 700px at 50% 110%, rgba(201,162,39,.07), transparent 60%),
+      linear-gradient(180deg,#070a0f 0%,#080c12 45%,#070a0f 100%);
+    background-attachment:fixed;
+    text-rendering:optimizeLegibility;
+  }
+  b, strong, h1, h2, h3, h4, summary { font-weight:400; }
+  body::before{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.16;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23c9a227' stroke-width='.7'%3E%3Cpath d='M60 8l14 24 28 4-20 20 5 28-27-14-27 14 5-28L18 36l28-4z'/%3E%3Ccircle cx='60' cy='60' r='42'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:240px 240px;
+    mask-image:radial-gradient(circle at 50% 0%,#000 0%,transparent 75%);
+  }
+  ::selection{background:rgba(201,162,39,.35);color:#fff}
+  a{color:inherit;text-decoration:none}
+  button,input{font:inherit;font-family:inherit}
+  .shell{position:relative;z-index:1;width:min(1480px,94vw);margin:0 auto}
+
+  /* ===== Header ===== */
+  .topbar{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(18px);
+    background:linear-gradient(180deg,rgba(7,10,15,.92),rgba(7,10,15,.72));
+    border-bottom:1px solid var(--line-soft);
+  }
+  .topbar-inner{
+    display:flex;align-items:center;gap:18px;justify-content:space-between;
+    padding:14px 0;
+  }
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand-mark{
+    width:44px;height:44px;flex:none;border-radius:14px;
+    display:grid;place-items:center;
+    background:linear-gradient(145deg,rgba(201,162,39,.18),rgba(201,162,39,.04));
+    border:1px solid var(--line);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    color:var(--gold-2);
+  }
+  .brand-mark svg{width:22px;height:22px}
+  .brand-text b{
+    display:block;font-family:var(--font-display);font-size:1.45rem;
+    color:var(--cream);white-space:nowrap;line-height:1.3;
+  }
+  .brand-text span{display:block;font-size:.85rem;color:var(--muted-2)}
+  .search-wrap{position:relative;flex:1;max-width:430px}
+  .search-wrap svg{
+    position:absolute;right:14px;top:50%;transform:translateY(-50%);
+    width:18px;height:18px;color:var(--muted-2);pointer-events:none;
+  }
+  #search{
+    width:100%;padding:12px 44px 12px 14px;
+    border-radius:999px;border:1px solid var(--line-soft);
+    background:rgba(255,255,255,.035);color:var(--cream);
+    outline:none;transition:.25s;
+    font-size:1rem;
+  }
+  #search::placeholder{color:var(--muted-2)}
+  #search:focus{
+    border-color:rgba(201,162,39,.55);
+    background:rgba(201,162,39,.05);
+    box-shadow:0 0 0 4px rgba(201,162,39,.08);
+  }
+
+  /* ===== Hero ===== */
+  .hero{padding:64px 0 34px;text-align:center;position:relative}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.85rem;color:var(--gold-2);
+    margin-bottom:18px;
+  }
+  .eyebrow::before,.eyebrow::after{
+    content:"";width:34px;height:1px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .hero h1{
+    margin:0 auto;max-width:900px;
+    font-family:var(--font-display);
+    font-size:clamp(2.9rem,6.2vw,5rem);
+    line-height:1.25;
+    background:linear-gradient(180deg,#fffaf0 0%,#f0d78c 55%,#b9921f 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 18px 50px rgba(201,162,39,.12);
+  }
+  .hero p{
+    max-width:720px;margin:18px auto 0;color:var(--muted);
+    font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.85;
+  }
+  .ornament{
+    width:min(420px,70vw);height:26px;margin:26px auto 0;
+    display:flex;align-items:center;gap:12px;color:var(--gold);
+    opacity:.8;
+  }
+  .ornament::before,.ornament::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+  .ornament i{width:9px;height:9px;transform:rotate(45deg);border:1px solid var(--gold);display:block}
+  .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+  .stat{
+    min-width:150px;padding:14px 22px;border-radius:16px;
+    border:1px solid var(--line-soft);
+    background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+  }
+  .stat b{display:block;font-family:var(--font-display);font-size:1.95rem;color:var(--gold-2);line-height:1.2}
+  .stat span{font-size:.88rem;color:var(--muted-2)}
+
+  /* ===== Toolbar ===== */
+  .toolbar{
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    gap:14px;margin:10px 0 22px;padding:14px 18px;
+    border:1px solid var(--line-soft);border-radius:16px;
+    background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01));
+  }
+  .toolbar-note{font-size:.95rem;color:var(--muted-2)}
+  .toolbar-note b{color:var(--gold-2)}
+  .reset{
+    border:1px solid var(--line);border-radius:999px;padding:8px 20px;
+    background:transparent;color:var(--gold-2);cursor:pointer;transition:.25s;
+    font-size:.95rem;
+  }
+  .reset:hover{background:rgba(201,162,39,.1);border-color:rgba(201,162,39,.5)}
+
+  /* ===== Grid & Cards ===== */
+  .grid{
+    display:grid;gap:24px;
+    grid-template-columns:repeat(auto-fill,minmax(360px,1fr));
+    padding-bottom:70px;
+  }
+  .card{
+    position:relative;border-radius:var(--radius);
+    border:1px solid var(--line-soft);
+    background:
+      radial-gradient(600px 200px at 80% -20%,rgba(201,162,39,.1),transparent 60%),
+      linear-gradient(180deg,var(--panel),var(--ink-2));
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;
+    animation:rise .6s both;
+  }
+  .card::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    opacity:.75;
+  }
+  .card:hover{transform:translateY(-4px);border-color:rgba(201,162,39,.32);box-shadow:0 30px 80px rgba(0,0,0,.55)}
+  .card[hidden]{display:none}
+  .card[open]{border-color:rgba(201,162,39,.36);transform:translateY(-2px)}
+
+  /* ---- البطاقة كأكورديون مستقل ---- */
+  .card-head{
+    list-style:none;
+    cursor:pointer;
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+    gap:14px;
+    padding:20px;
+    position:relative;
+    outline:none;
+  }
+  .card-head::-webkit-details-marker{display:none}
+  .card-head:focus-visible{
+    box-shadow:inset 0 0 0 2px rgba(201,162,39,.35);
+    border-radius:var(--radius);
+  }
+  .card-info{min-width:0}
+  .card-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.82rem;color:var(--gold-2);
+    border:1px solid var(--line);border-radius:999px;padding:4px 14px;
+    background:rgba(201,162,39,.06);
+  }
+  .badge i{width:5px;height:5px;border-radius:50%;background:var(--gold);display:block}
+  .range{font-size:.85rem;color:var(--muted-2);white-space:nowrap}
+  .card-title{
+    margin:0;font-family:var(--font-display);
+    font-size:1.5rem;line-height:1.55;color:var(--cream);
+    display:block;
+  }
+  .card-sub{margin:4px 0 0;font-size:.92rem;color:var(--muted-2)}
+  .card-sub b{color:var(--muted)}
+  .card-chev{
+    width:40px;height:40px;border-radius:50%;
+    display:grid;place-items:center;
+    border:1px solid rgba(255,255,255,.1);
+    color:var(--muted);
+    transition:transform .35s ease,color .35s,border-color .35s,background .35s;
+    flex:none;
+  }
+  .card-chev svg{width:16px;height:16px}
+  .card[open] .card-chev{
+    transform:rotate(180deg);
+    color:var(--gold-2);
+    border-color:rgba(201,162,39,.5);
+    background:rgba(201,162,39,.12);
+  }
+  .card[open]::before{opacity:1}
+
+  /* ---- كتب البطاقة ---- */
+  .book-list{padding:10px 12px 14px;display:flex;flex-direction:column;gap:8px}
+  .card[open] .book-list{animation:fade .4s both}
+
+  details.book{
+    border:1px solid rgba(255,255,255,.055);
+    border-radius:13px;
+    background:linear-gradient(180deg,rgba(255,255,255,.032),rgba(255,255,255,.012));
+    transition:border-color .28s,background .28s,box-shadow .28s;
+  }
+  details.book:hover{border-color:rgba(201,162,39,.25);background:rgba(255,255,255,.04)}
+  details.book[open]{
+    border-color:rgba(201,162,39,.42);
+    background:linear-gradient(180deg,rgba(201,162,39,.06),rgba(255,255,255,.015));
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+  }
+  details.book[hidden]{display:none}
+  details.book summary{
+    list-style:none;cursor:pointer;
+    display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:12px;
+    padding:12px 13px;border-radius:12px;outline:none;
+  }
+  details.book summary::-webkit-details-marker{display:none}
+  details.book summary:focus-visible{box-shadow:0 0 0 3px rgba(201,162,39,.25)}
+  .num{
+    width:32px;height:32px;flex:none;border-radius:10px;
+    display:grid;place-items:center;
+    font-size:.88rem;color:var(--gold-2);
+    border:1px solid var(--line);
+    background:rgba(201,162,39,.07);
+    font-variant-numeric:tabular-nums;
+    line-height:1;
+  }
+  .book-main{min-width:0}
+  .book-title{
+    display:block;font-size:1.08rem;color:var(--cream);
+    line-height:1.65;overflow:hidden;text-overflow:ellipsis;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  }
+  .book-author{
+    display:block;margin-top:2px;font-size:.88rem;color:var(--muted-2);
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .chev{
+    width:28px;height:28px;flex:none;border-radius:50%;
+    display:grid;place-items:center;
+    border:1px solid rgba(255,255,255,.09);
+    color:var(--muted);
+    transition:transform .3s ease,color .3s,border-color .3s,background .3s;
+  }
+  .chev svg{width:13px;height:13px}
+  details.book[open] .chev{
+    transform:rotate(180deg);
+    color:var(--gold-2);border-color:rgba(201,162,39,.45);
+    background:rgba(201,162,39,.1);
+  }
+  .book-body{
+    padding:2px 14px 15px 14px;
+    border-top:1px dashed rgba(201,162,39,.18);
+    margin:0 12px;
+    animation:fade .35s both;
+  }
+  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 10px}
+  .meta{
+    padding:8px 10px;border-radius:10px;
+    border:1px solid rgba(255,255,255,.055);
+    background:rgba(0,0,0,.18);
+  }
+  .meta span{display:block;font-size:.78rem;color:var(--muted-2);margin-bottom:2px}
+  .meta b{display:block;font-size:.95rem;color:var(--cream);line-height:1.55}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .tag{
+    font-size:.78rem;padding:3px 11px;border-radius:999px;
+    color:var(--gold-2);border:1px solid rgba(201,162,39,.24);
+    background:rgba(201,162,39,.06);
+  }
+  .desc{margin:0 0 12px;font-size:.95rem;color:var(--muted);line-height:1.9}
+  .open-link{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 18px;border-radius:999px;
+    border:1px solid rgba(201,162,39,.45);
+    color:var(--gold-2);font-size:.92rem;
+    background:linear-gradient(180deg,rgba(201,162,39,.12),rgba(201,162,39,.03));
+    transition:.28s;
+  }
+  .open-link:hover{background:rgba(201,162,39,.2);border-color:var(--gold);color:#fff}
+  .open-link svg{width:13px;height:13px}
+
+  .empty{
+    grid-column:1/-1;text-align:center;padding:70px 20px;
+    border:1px dashed var(--line);border-radius:var(--radius);
+    color:var(--muted-2);background:rgba(255,255,255,.015);
+  }
+  .empty b{display:block;font-family:var(--font-display);font-size:1.6rem;color:var(--gold-2);margin-bottom:6px}
+
+  /* ===== Footer ===== */
+  footer{
+    border-top:1px solid var(--line-soft);
+    padding:34px 0 46px;text-align:center;color:var(--muted-2);font-size:.9rem;
+  }
+  footer .f-brand{
+    font-family:var(--font-display);font-size:1.4rem;color:var(--gold-2);
+    display:block;margin-bottom:6px;
+  }
+  footer a{border-bottom:1px solid rgba(201,162,39,.25);padding-bottom:1px}
+  footer a:hover{color:var(--gold-2)}
+
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+  @media (max-width:720px){
+    .topbar-inner{flex-wrap:wrap;gap:10px}
+    .search-wrap{max-width:none;order:3;flex-basis:100%}
+    .brand-text span{display:none}
+    .hero{padding:44px 0 24px}
+    .grid{grid-template-columns:1fr;gap:18px}
+    .card-head{padding:18px 16px 14px}
+    .meta-grid{grid-template-columns:1fr 1fr}
+    .stat{min-width:120px;padding:12px 16px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+<link rel="stylesheet" href="theme.css">
+<script src="theme.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M4 6.5C4 5.1 5.1 4 6.5 4H20v15.5H6.5A2.5 2.5 0 0 0 4 22V6.5Z"/>
+          <path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20"/>
+          <path d="M8 8h8M8 11.5h5"/>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <b>كتب علوم الحديث</b>
+        <span>مكتبة علوم الحديث</span>
+      </div>
+    </div>
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+      </svg>
+      <label for="search" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">بحث في الكتب</label>
+      <input id="search" type="search" placeholder="ابحث باسم الكتاب أو المصنف…" autocomplete="off" />
+    </div>
+  </div>
+</header>
+
+<main class="shell">
+  <section class="hero">
+    <span class="eyebrow">فهرس زمني</span>
+    <h1 style="line-height: 1.5;">كتب علوم الحديث</h1>
+    <p>كتب علوم الحديث ومصطلحه مرتبة على تواريخ وفاة مصنفيها، في بطاقات من عشرة كتب، مع أكورديون مستقل لكل بطاقة وكل كتاب.</p>
+    <div class="ornament" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="stats" id="stats">
+      <div class="stat"><b id="stat-books">—</b><span>كتابًا</span></div>
+      <div class="stat"><b id="stat-authors">—</b><span>مصنفًا</span></div>
+      <div class="stat"><b id="stat-centuries">—</b><span>قرنًا هجريًا</span></div>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <div class="toolbar-note">عرض <b id="visible-count">—</b> من أصل <b id="total-count">—</b> كتابًا</div>
+    <button class="reset" id="reset" type="button">إعادة ضبط البحث</button>
+  </div>
+
+  <div class="grid" id="grid" aria-live="polite"></div>
+</main>
+
+<footer>
+  <div class="shell">
+    <span class="f-brand">المكتبة الشاملة</span>
+    نسخة فهرسية أنيقة لكتب علوم الحديث — البيانات والأوصاف من موقع
+    <a href="https://shamela.ws/" target="_blank" rel="noopener">shamela.ws</a>.
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   البيانات: العنوان | المصنف | سنة الوفاة (هجري)
+   ============================================================ */
+const BOOK_URLS = {
+  "الجامع لعلوم الإمام أحمد - علوم الحديث": "https://shamela.ws/book/20859",
+  "رسالة أبي داود إلى أهل مكة": "https://shamela.ws/book/6013",
+  "رسائل في علوم الحديث": "https://shamela.ws/book/6004",
+  "المحدث الفاصل": "https://shamela.ws/book/13059",
+  "المخزون في علم الحديث": "https://shamela.ws/book/1458",
+  "الإلزامات والتتبع": "https://shamela.ws/book/21474",
+  "ناسخ الحديث ومنسوخه": "https://shamela.ws/book/13184",
+  "رسالة في فضل الأخبار": "https://shamela.ws/book/6015",
+  "المدخل إلى الصحيح": "https://shamela.ws/book/6027",
+  "معرفة علوم الحديث": "https://shamela.ws/book/13179",
+  "المدخل إلى السنن الكبرى": "https://shamela.ws/book/39268",
+  "الأسماء المبهمة": "https://shamela.ws/book/5815",
+  "الجامع لأخلاق الراوي": "https://shamela.ws/book/13012",
+  "الرحلة في طلب الحديث": "https://shamela.ws/book/1454",
+  "السابق واللاحق": "https://shamela.ws/book/7640",
+  "الفصل للوصل": "https://shamela.ws/book/10842",
+  "تقييد العلم": "https://shamela.ws/book/13089",
+  "شرف أصحاب الحديث": "https://shamela.ws/book/13125",
+  "موضح أوهام الجمع والتفريق": "https://shamela.ws/book/6025",
+  "نصيحة أهل الحديث": "https://shamela.ws/book/5646",
+  "إيضاح الإشكال": "https://shamela.ws/book/5996",
+  "مسألة العلو والنزول": "https://shamela.ws/book/6002",
+  "الإلماع إلى معرفة أصول الرواية": "https://shamela.ws/book/6030",
+  "أدب الإملاء والاستملاء": "https://shamela.ws/book/6018",
+  "كشف المغطا": "https://shamela.ws/book/6032",
+  "شرط القراءة على الشيوخ": "https://shamela.ws/book/142167",
+  "اللطائف من دقائق المعارف": "https://shamela.ws/book/26878",
+  "خصائص مسند الإمام أحمد": "https://shamela.ws/book/11174",
+  "الاعتبار في الناسخ والمنسوخ": "https://shamela.ws/book/22868",
+  "إعلام العالم بعد رسوخه": "https://shamela.ws/book/9369",
+  "صيانة صحيح مسلم": "https://shamela.ws/book/6016",
+  "مقدمة ابن الصلاح": "https://shamela.ws/book/22870",
+  "جواب الحافظ المنذري": "https://shamela.ws/book/9863",
+  "إرشاد طلاب الحقائق": "https://shamela.ws/book/127654",
+  "التقريب والتيسير": "https://shamela.ws/book/5586",
+  "نظم علوم الحديث = أقصى الأمل والسول في علم حديث الرسول": "https://shamela.ws/book/32181",
+  "الغرامية في مصطلح الحديث": "https://shamela.ws/book/36127",
+  "الاقتراح في بيان الاصطلاح": "https://shamela.ws/book/5968",
+  "السنن الأبين": "https://shamela.ws/book/6011",
+  "رسوم التحديث في علوم الحديث": "https://shamela.ws/book/5992",
+  "المنهل الروي": "https://shamela.ws/book/5959",
+  "الخلاصة في معرفة الحديث": "https://shamela.ws/book/17807",
+  "شرح غرامي صحيح": "https://shamela.ws/book/1055",
+  "الكافي في علوم الحديث": "https://shamela.ws/book/789",
+  "الموقظة": "https://shamela.ws/book/147662",
+  "مشيخة القزويني": "https://shamela.ws/book/26802",
+  "تحقيق منيف الرتبة": "https://shamela.ws/book/11088",
+  "قاعدة في الجرح والتعديل": "https://shamela.ws/book/26113",
+  "الباعث الحثيث": "https://shamela.ws/book/21571",
+  "النكت على مقدمة ابن الصلاح": "https://shamela.ws/book/5978",
+  "شرح علل الترمذي": "https://shamela.ws/book/9552",
+  "الشذا الفياح": "https://shamela.ws/book/7349",
+  "التذكرة في علوم الحديث": "https://shamela.ws/book/23640",
+  "المقنع في علوم الحديث": "https://shamela.ws/book/5976",
+  "مقدمة ابن الصلاح ومحاسن الاصطلاح": "https://shamela.ws/book/29878",
+  "ألفية العراقي": "https://shamela.ws/book/5902",
+  "التقييد والإيضاح": "https://shamela.ws/book/7581",
+  "الديباج المذهب": "https://shamela.ws/book/30531",
+  "المختصر في أصول الحديث": "https://shamela.ws/book/5984",
+  "النكت على كتاب ابن الصلاح": "https://shamela.ws/book/8316",
+  "نزهة النظر": "https://shamela.ws/book/316",
+  "المختصر في علم الأثر": "https://shamela.ws/book/5975",
+  "النكت الوفية": "https://shamela.ws/book/23798",
+  "شرح ألفية العراقي": "https://shamela.ws/book/96618",
+  "التوضيح الأبهر": "https://shamela.ws/book/8663",
+  "الغاية في شرح الهداية": "https://shamela.ws/book/5956",
+  "فتح المغيث": "https://shamela.ws/book/5963",
+  "ألفية السيوطي": "https://shamela.ws/book/10483",
+  "نظم الدرر": "https://shamela.ws/book/10483",
+  "البحر الذي زخر": "https://shamela.ws/book/7729",
+  "التطريف في التصحيف": "https://shamela.ws/book/6001",
+  "تدريب الراوي": "https://shamela.ws/book/9329",
+  "تذكرة المؤتسي": "https://shamela.ws/book/6021",
+  "مفتاح الجنة": "https://shamela.ws/book/4864",
+  "فتح الباقي": "https://shamela.ws/book/35261",
+  "قفو الأثر": "https://shamela.ws/book/1531",
+  "شرح نخبة الفكر": "https://shamela.ws/book/5989",
+  "اليواقيت والدرر شرح شرح نخبة الفكر": "https://shamela.ws/book/5979",
+  "مقدمة في أصول الحديث": "https://shamela.ws/book/5988",
+  "المنظومة البيقونية": "https://shamela.ws/book/8567",
+  "حاشية الخرشي": "https://shamela.ws/book/320",
+  "رسالة في جمع أشكال الحديث": "https://shamela.ws/book/207",
+  "إسبال المطر": "https://shamela.ws/book/2241",
+  "توضيح الأفكار": "https://shamela.ws/book/11990",
+  "ثمرات النظر": "https://shamela.ws/book/5983",
+  "العروس المجلية": "https://shamela.ws/book/17797",
+  "بلغة الأريب": "https://shamela.ws/book/5980",
+  "إجازة الشيخ العلامة": "https://shamela.ws/book/17847",
+  "الرفع والتكميل": "https://shamela.ws/book/5973",
+  "نيل الأماني": "https://shamela.ws/book/30013",
+  "الجرح والتعديل": "https://shamela.ws/book/36616",
+  "قواعد التحديث": "https://shamela.ws/book/9993",
+  "توجيه النظر": "https://shamela.ws/book/5981",
+  "عقد الدرر": "https://shamela.ws/book/696",
+  "الباعث الحثيث (شرح)": "https://shamela.ws/book/150481",
+  "إيضاح المريب": "https://shamela.ws/book/30107",
+  "مسند الجن": "https://shamela.ws/book/30102",
+  "الاستشراق والمستشرقون": "https://shamela.ws/book/37417",
+  "السنة ومكانتها": "https://shamela.ws/book/37639",
+  "أحكام الحديث الضعيف": "https://shamela.ws/book/402",
+  "الأنوار الكاشفة": "https://shamela.ws/book/9463",
+  "التنكيل": "https://shamela.ws/book/12767",
+  "السنة ومكانتها من التشريع": "https://shamela.ws/book/28040",
+  "التقريرات السنية": "https://shamela.ws/book/5970",
+  "المبشرون والمستشرقون": "https://shamela.ws/book/36148",
+  "الوسيط في علوم ومصطلح الحديث": "https://shamela.ws/book/9987",
+  "دفاع عن السنة": "https://shamela.ws/book/37972",
+  "الحديث والمحدثون": "https://shamela.ws/book/8656",
+  "الرد على من ينكر حجية السنة": "https://shamela.ws/book/37826",
+  "علوم الحديث ومصطلحه": "https://shamela.ws/book/96229",
+  "المحاضرة الدفاعية": "https://shamela.ws/book/8541",
+  "شبهات حول السنة": "https://shamela.ws/book/30836",
+  "التدليس والمدلسون": "https://shamela.ws/book/22949",
+  "حجية السنة النبوية": "https://shamela.ws/book/10132",
+  "الحديث حجة بنفسه": "https://shamela.ws/book/7607",
+  "منزلة السنة في الإسلام": "https://shamela.ws/book/705",
+  "شرح المنظومة البيقونية": "https://shamela.ws/book/11254",
+  "مصطلح الحديث": "https://shamela.ws/book/21581",
+  "مدرسة الحديث في مصر": "https://shamela.ws/book/9974",
+  "المقترح في أجوبة بعض أسئلة المصطلح": "https://shamela.ws/book/96783",
+  "السنة النبوية في مواجهة شبهات الاستشراق": "https://shamela.ws/book/26697",
+  "تدوين السنة النبوية": "https://shamela.ws/book/11091",
+  "علم الرجال نشأته وتطوره": "https://shamela.ws/book/11297",
+  "السنة المفترى عليها": "https://shamela.ws/book/95845",
+  "السنة كلها تشريع": "https://shamela.ws/book/36192",
+  "المستشرقون والتراث": "https://shamela.ws/book/23307",
+  "طرق الاستدلال بالسنة والاستنباط منها": "https://shamela.ws/book/37347",
+  "المستشرقون والسنة": "https://shamela.ws/book/1222",
+  "دراسات في السنة النبوية": "https://shamela.ws/book/23071",
+  "الزبد في مصطلح الحديث": "https://shamela.ws/book/797",
+  "تذكرة الطالبين": "https://shamela.ws/book/7456",
+  "الإمام البخاري وفقه التراجم": "https://shamela.ws/book/36151",
+  "منهج النقد في علوم الحديث": "https://shamela.ws/book/6658",
+  "السنة قبل التدوين": "https://shamela.ws/book/96178",
+  "تيسير مصطلح الحديث": "https://shamela.ws/book/8681",
+  "حجية السنة ودحض الشبهات التي تثار حولها": "https://shamela.ws/book/10133",
+  "إجماع المحدثين": "https://shamela.ws/book/16231",
+  "التخريج ودراسة الأسانيد": "https://shamela.ws/book/3933",
+  "المنهج المقترح لفهم المصطلح": "https://shamela.ws/book/9247",
+  "خلاصة التأصيل": "https://shamela.ws/book/1210",
+  "تصحيفات المحدثين": "https://shamela.ws/book/1591",
+  "الإمام البخاري وكتابه": "https://shamela.ws/book/8772",
+  "كيف نستفيد من الكتب الستة": "https://shamela.ws/book/11360",
+  "المقترب في بيان المضطرب": "https://shamela.ws/book/8562",
+  "أثر اختلاف الأسانيد": "https://shamela.ws/book/1747",
+  "أثر علل الحديث": "https://shamela.ws/book/7586",
+  "تحرير علوم الحديث": "https://shamela.ws/book/1416"
+};
+const DIGITAL_TITLES = {
+  "الجامع لعلوم الإمام أحمد - علوم الحديث": "الجامع لعلوم الإمام أحمد - علوم الحديث",
+  "رسالة أبي داود إلى أهل مكة": "رسالة أبي داود إلى أهل مكة",
+  "رسائل في علوم الحديث": "رسائل في علوم الحديث",
+  "المحدث الفاصل": "المحدث الفاصل ت عجاج",
+  "المخزون في علم الحديث": "المخزون في علم الحديث",
+  "الإلزامات والتتبع": "الإلزامات والتتبع للدارقطني",
+  "ناسخ الحديث ومنسوخه": "ناسخ الحديث ومنسوخه لابن شاهين",
+  "رسالة في فضل الأخبار": "فضل الأخبار وشرح مذاهب أهل الآثار = شروط الأئمة",
+  "المدخل إلى الصحيح": "المدخل إلى الصحيح - ط الرسالة",
+  "معرفة علوم الحديث": "معرفة علوم الحديث للحاكم",
+  "المدخل إلى السنن الكبرى": "المدخل إلى السنن الكبرى - البيهقي - ت عوامة",
+  "الأسماء المبهمة": "الأسماء المبهمة في الأنباء المحكمة",
+  "الجامع لأخلاق الراوي": "الجامع لأخلاق الراوي وآداب السامع للخطيب البغدادي",
+  "الرحلة في طلب الحديث": "الرحلة في طلب الحديث - ت أبي أويس",
+  "السابق واللاحق": "السابق واللاحق في تباعد ما بين وفاة راويين عن شيخ واحد",
+  "الفصل للوصل": "الفصل للوصل المدرج في النقل",
+  "تقييد العلم": "تقييد العلم للخطيب البغدادي",
+  "شرف أصحاب الحديث": "شرف أصحاب الحديث للخطيب البغدادي",
+  "موضح أوهام الجمع والتفريق": "موضح أوهام الجمع والتفريق",
+  "نصيحة أهل الحديث": "نصيحة أهل الحديث",
+  "إيضاح الإشكال": "إيضاح الإشكال",
+  "مسألة العلو والنزول": "مسألة العلو والنزول في الحديث",
+  "الإلماع إلى معرفة أصول الرواية": "الإلماع إلى معرفة أصول الرواية وتقييد السماع",
+  "أدب الإملاء والاستملاء": "أدب الإملاء والاستملاء",
+  "كشف المغطا": "كشف المغطا في فضل الموطا",
+  "شرط القراءة على الشيوخ": "شرط القراءة على الشيوخ للسلفي",
+  "اللطائف من دقائق المعارف": "اللطائف من دقائق المعارف في علوم الحفاظ الأعارف",
+  "خصائص مسند الإمام أحمد": "خصائص مسند الإمام أحمد",
+  "الاعتبار في الناسخ والمنسوخ": "الاعتبار في الناسخ والمنسوخ من الآثار",
+  "إعلام العالم بعد رسوخه": "إعلام العالم بعد رسوخه بناسخ الحديث ومنسوخه",
+  "صيانة صحيح مسلم": "صيانة صحيح مسلم",
+  "مقدمة ابن الصلاح": "مقدمة ابن الصلاح = معرفة أنواع علوم الحديث - ت عتر",
+  "جواب الحافظ المنذري": "جواب الحافظ المنذري عن أسئلة في الجرح والتعديل",
+  "إرشاد طلاب الحقائق": "إرشاد طلاب الحقائق إلى معرفة سنن خير الخلائق صلى الله عليه وسلم",
+  "التقريب والتيسير": "التقريب والتيسير للنووي",
+  "نظم علوم الحديث = أقصى الأمل والسول في علم حديث الرسول": "نظم علوم الحديث = أقصى الأمل والسول في علم حديث الرسول",
+  "الغرامية في مصطلح الحديث": "الغرامية في مصطلح الحديث",
+  "الاقتراح في بيان الاصطلاح": "الاقتراح في بيان الاصطلاح",
+  "السنن الأبين": "السنن الأبين والمورد الأمعن في المحاكمة بين الإمامين في السند المعنعن",
+  "رسوم التحديث في علوم الحديث": "رسوم التحديث في علوم الحديث",
+  "المنهل الروي": "المنهل الروي في مختصر علوم الحديث النبوي",
+  "الخلاصة في معرفة الحديث": "الخلاصة في معرفة الحديث",
+  "شرح غرامي صحيح": "شرح غرامي صحيح - ابن عبد الهادي - ت الحفيان",
+  "الكافي في علوم الحديث": "الكافي في علوم الحديث",
+  "الموقظة": "الموقظة - ط ركائز",
+  "مشيخة القزويني": "مشيخة القزويني",
+  "تحقيق منيف الرتبة": "تحقيق منيف الرتبة لمن ثبت له شريف الصحبة",
+  "قاعدة في الجرح والتعديل": "قاعدة في الجرح والتعديل",
+  "الباعث الحثيث": "الباعث الحثيث إلى اختصار علوم الحديث",
+  "النكت على مقدمة ابن الصلاح": "النكت على مقدمة ابن الصلاح للزركشي",
+  "شرح علل الترمذي": "شرح علل الترمذي",
+  "الشذا الفياح": "الشذا الفياح من علوم ابن الصلاح",
+  "التذكرة في علوم الحديث": "التذكرة في علوم الحديث لابن الملقن",
+  "المقنع في علوم الحديث": "المقنع في علوم الحديث",
+  "مقدمة ابن الصلاح ومحاسن الاصطلاح": "مقدمة ابن الصلاح ومحاسن الاصطلاح",
+  "ألفية العراقي": "ألفية العراقي التبصرة والتذكرة - ت الفحل",
+  "التقييد والإيضاح": "التقييد والإيضاح شرح مقدمة ابن الصلاح",
+  "الديباج المذهب": "الديباج المذهب في مصطلح الحديث",
+  "المختصر في أصول الحديث": "المختصر في أصول الحديث = رسالة في أصول الحديث",
+  "النكت على كتاب ابن الصلاح": "النكت على كتاب ابن الصلاح لابن حجر",
+  "نزهة النظر": "نزهة النظر في توضيح نخبة الفكر - ت القاسم",
+  "المختصر في علم الأثر": "المختصر في علم الأثر",
+  "النكت الوفية": "النكت الوفية بما في شرح الألفية",
+  "شرح ألفية العراقي": "شرح ألفية العراقي - ابن العيني",
+  "التوضيح الأبهر": "التوضيح الأبهر لتذكرة ابن الملقن في علم الأثر",
+  "الغاية في شرح الهداية": "الغاية فى شرح الهداية فى علم الرواية",
+  "فتح المغيث": "فتح المغيث بشرح ألفية الحديث",
+  "ألفية السيوطي": "ألفية السيوطي نظم الدرر في علم الأثر - ت الفحل",
+  "نظم الدرر": "ألفية السيوطي نظم الدرر في علم الأثر - ت الفحل",
+  "البحر الذي زخر": "البحر الذي زخر في شرح ألفية الأثر - قسم 1 - ت الأندونوسي",
+  "التطريف في التصحيف": "التطريف في التصحيف",
+  "تدريب الراوي": "تدريب الراوي في شرح تقريب النواوي",
+  "تذكرة المؤتسي": "تذكرة المؤتسي فيمن حدث ونسي",
+  "مفتاح الجنة": "مفتاح الجنة في الاحتجاج بالسنة",
+  "فتح الباقي": "فتح الباقي بشرح ألفية العراقي",
+  "قفو الأثر": "قفو الأثر في صفوة علوم الأثر",
+  "شرح نخبة الفكر": "شرح نخبة الفكر للقاري",
+  "اليواقيت والدرر شرح شرح نخبة الفكر": "اليواقيت والدرر شرح شرح نخبة الفكر",
+  "مقدمة في أصول الحديث": "مقدمة في أصول الحديث",
+  "المنظومة البيقونية": "المنظومة البيقونية",
+  "حاشية الخرشي": "حاشية الخرشي منتهى الرغبة في حل ألفاظ النخبة",
+  "رسالة في جمع أشكال الحديث": "رسالة في جمع أشكال الحديث الضعيف",
+  "إسبال المطر": "إسبال المطر على قصب السكر نظم نخبة الفكر في مصطلح أهل الأثر",
+  "توضيح الأفكار": "توضيح الأفكار لمعاني تنقيح الأنظار",
+  "ثمرات النظر": "ثمرات النظر في علم الأثر",
+  "العروس المجلية": "العروس المجلية في أسانيد الحديث المسلسل بالأولية",
+  "بلغة الأريب": "بلغة الأريب في مصطلح آثار الحبيب",
+  "إجازة الشيخ العلامة": "إجازة الشيخ العلامة عبد اللطيف بن عبد الرحمن آل الشيخ",
+  "الرفع والتكميل": "الرفع والتكميل",
+  "نيل الأماني": "نيل الأماني في توضيح مقدمة القسطلاني - ط عطاءات العلم",
+  "الجرح والتعديل": "الجرح والتعديل - القاسمي",
+  "قواعد التحديث": "قواعد التحديث من فنون مصطلح الحديث",
+  "توجيه النظر": "توجيه النظر إلى أصول الأثر",
+  "عقد الدرر": "عقد الدرر في شرح مختصر نخبة الفكر",
+  "الباعث الحثيث (شرح)": "الباعث الحثيث شرح اختصار علوم الحديث ط ابن الجوزي",
+  "إيضاح المريب": "إيضاح المريب من تعليق اعلام الأريب بحدوث بدعة المحاريب",
+  "مسند الجن": "مسند الجن",
+  "الاستشراق والمستشرقون": "الاستشراق والمستشرقون ما لهم وما عليهم",
+  "السنة ومكانتها": "السنة ومكانتها للسباعي ط الوراق",
+  "أحكام الحديث الضعيف": "أحكام الحديث الضعيف - ضمن «آثار المعلمي»",
+  "الأنوار الكاشفة": "الأنوار الكاشفة لما في كتاب «أضواء على السنة» - ط السلفية",
+  "التنكيل": "التنكيل بما في تأنيب الكوثري من الأباطيل - ط المكتب الإسلامي",
+  "السنة ومكانتها من التشريع": "السنة ومكانتها من التشريع لعبد الحليم محمود",
+  "التقريرات السنية": "التقريرات السنية شرح المنظومة البيقونية في مصطلح الحديث",
+  "المبشرون والمستشرقون": "المبشرون والمستشرقون في موقفهم من الإسلام",
+  "الوسيط في علوم ومصطلح الحديث": "الوسيط في علوم ومصطلح الحديث",
+  "دفاع عن السنة": "دفاع عن السنة ورد شبه المستشرقين ط مكتبة السنة",
+  "الحديث والمحدثون": "الحديث والمحدثون",
+  "الرد على من ينكر حجية السنة": "الرد على من ينكر حجية السنة",
+  "علوم الحديث ومصطلحه": "علوم الحديث ومصطلحه",
+  "المحاضرة الدفاعية": "المحاضرة الدفاعيةعن السنة المحمدية",
+  "شبهات حول السنة": "شبهات حول السنة",
+  "التدليس والمدلسون": "التدليس والمدلسون",
+  "حجية السنة النبوية": "حجية السنة النبوية ومكانتها في التشريع الإسلامي",
+  "الحديث حجة بنفسه": "الحديث حجة بنفسه في العقائد والأحكام",
+  "منزلة السنة في الإسلام": "منزلة السنة في الإسلام",
+  "شرح المنظومة البيقونية": "شرح المنظومة البيقونية في مصطلح الحديث",
+  "مصطلح الحديث": "مصطلح الحديث",
+  "مدرسة الحديث في مصر": "مدرسة الحديث في مصر",
+  "المقترح في أجوبة بعض أسئلة المصطلح": "المقترح في أجوبة بعض أسئلة المصطلح",
+  "السنة النبوية في مواجهة شبهات الاستشراق": "السنة النبوية في مواجهة شبهات الاستشراق - أنور الجندي",
+  "تدوين السنة النبوية": "تدوين السنة النبوية نشأته وتطوره من القرن الأول إلى نهاية القرن التاسع الهجري",
+  "علم الرجال نشأته وتطوره": "علم الرجال نشأته وتطوره من القرن الأول إلى نهاية القرن التاسع",
+  "السنة المفترى عليها": "السنة المفترى عليها",
+  "السنة كلها تشريع": "السنة كلها تشريع - موسى شاهين لاشين",
+  "المستشرقون والتراث": "المستشرقون والتراث",
+  "طرق الاستدلال بالسنة والاستنباط منها": "طرق الاستدلال بالسنة والاستنباط منها",
+  "المستشرقون والسنة": "المستشرقون والسنة",
+  "دراسات في السنة النبوية": "دراسات في السنة النبوية",
+  "الزبد في مصطلح الحديث": "الزبد في مصطلح الحديث",
+  "تذكرة الطالبين": "تذكرة الطالبين في بيان الموضوع وأصناف الوضاعين",
+  "الإمام البخاري وفقه التراجم": "الإمام البخاري وفقه التراجم في جامعه الصحيح",
+  "منهج النقد في علوم الحديث": "منهج النقد في علوم الحديث",
+  "السنة قبل التدوين": "السنة قبل التدوين",
+  "تيسير مصطلح الحديث": "تيسير مصطلح الحديث",
+  "حجية السنة ودحض الشبهات التي تثار حولها": "حجية السنة ودحض الشبهات التي تثار حولها",
+  "إجماع المحدثين": "إجماع المحدثين",
+  "التخريج ودراسة الأسانيد": "التخريج ودراسة الأسانيد",
+  "المنهج المقترح لفهم المصطلح": "المنهج المقترح لفهم المصطلح",
+  "خلاصة التأصيل": "خلاصة التأصيل لعلم الجرح والتعديل - ط المعراج",
+  "تصحيفات المحدثين": "تصحيفات المحدثين - باشنفر",
+  "الإمام البخاري وكتابه": "الإمام البخاري وكتابه الجامع الصحيح",
+  "كيف نستفيد من الكتب الستة": "كيف نستفيد من الكتب الحديثية الستة",
+  "المقترب في بيان المضطرب": "المقترب في بيان المضطرب",
+  "أثر اختلاف الأسانيد": "أثر اختلاف الأسانيد والمتون في اختلاف الفقهاء",
+  "أثر علل الحديث": "أثر علل الحديث في اختلاف الفقهاء",
+  "تحرير علوم الحديث": "تحرير علوم الحديث"
+};
+const RAW = `
+الجامع لعلوم الإمام أحمد - علوم الحديث|أحمد بن حنبل|320
+رسالة أبي داود إلى أهل مكة|أبو داود السجستاني|275
+رسائل في علوم الحديث|النسائي|303
+المحدث الفاصل|الرامهرمزي|360
+المخزون في علم الحديث|أبو الفتح الأزدي|374
+الإلزامات والتتبع|الدارقطني|385
+ناسخ الحديث ومنسوخه|ابن شاهين|385
+رسالة في فضل الأخبار|ابن منده|395
+المدخل إلى الصحيح|الحاكم النيسابوري|405
+معرفة علوم الحديث|الحاكم النيسابوري|405
+المدخل إلى السنن الكبرى|أبو بكر البيهقي|458
+الأسماء المبهمة|الخطيب البغدادي|463
+الجامع لأخلاق الراوي|الخطيب البغدادي|463
+الرحلة في طلب الحديث|الخطيب البغدادي|463
+السابق واللاحق|الخطيب البغدادي|463
+الفصل للوصل|الخطيب البغدادي|463
+تقييد العلم|الخطيب البغدادي|463
+شرف أصحاب الحديث|الخطيب البغدادي|463
+موضح أوهام الجمع والتفريق|الخطيب البغدادي|463
+نصيحة أهل الحديث|الخطيب البغدادي|463
+إيضاح الإشكال|ابن القيسراني|507
+مسألة العلو والنزول|ابن القيسراني|507
+الإلماع إلى معرفة أصول الرواية|القاضي عياض|544
+أدب الإملاء والاستملاء|أبو سعد السمعاني|562
+كشف المغطا|ابن عساكر|571
+شرط القراءة على الشيوخ|أبو طاهر السلفي|576
+اللطائف من دقائق المعارف|أبو موسى المديني|581
+خصائص مسند الإمام أحمد|أبو موسى المديني|581
+الاعتبار في الناسخ والمنسوخ|الحازمي|584
+إعلام العالم بعد رسوخه|ابن الجوزي|597
+صيانة صحيح مسلم|ابن الصلاح|643
+مقدمة ابن الصلاح|ابن الصلاح|643
+جواب الحافظ المنذري|المنذري|656
+إرشاد طلاب الحقائق|النووي|676
+التقريب والتيسير|النووي|676
+نظم علوم الحديث = أقصى الأمل والسول في علم حديث الرسول|شهاب الدين الخويي|693
+الغرامية في مصطلح الحديث|ابن فرح الإشبيلي|699
+الاقتراح في بيان الاصطلاح|ابن دقيق العيد|702
+السنن الأبين|ابن رشيد|721
+رسوم التحديث في علوم الحديث|الجعبري|732
+المنهل الروي|ابن جماعة|733
+الخلاصة في معرفة الحديث|الطيبي|743
+شرح غرامي صحيح|ابن عبد الهادي|744
+الكافي في علوم الحديث|أبو الحسن التبريزي|746
+الموقظة|شمس الدين الذهبي|748
+مشيخة القزويني|سراج الدين القزويني|750
+تحقيق منيف الرتبة|صلاح الدين العلائي|761
+قاعدة في الجرح والتعديل|تاج الدين السبكي|771
+الباعث الحثيث|ابن كثير|774
+النكت على مقدمة ابن الصلاح|بدر الدين الزركشي|794
+شرح علل الترمذي|ابن رجب الحنبلي|795
+الشذا الفياح|برهان الدين الأبناسي|802
+التذكرة في علوم الحديث|ابن الملقن|804
+المقنع في علوم الحديث|ابن الملقن|804
+مقدمة ابن الصلاح ومحاسن الاصطلاح|سراج الدين البلقيني|805
+ألفية العراقي|العراقي|806
+التقييد والإيضاح|العراقي|806
+الديباج المذهب|الجرجاني|816
+المختصر في أصول الحديث|الجرجاني|816
+النكت على كتاب ابن الصلاح|ابن حجر العسقلاني|852
+نزهة النظر|ابن حجر العسقلاني|852
+المختصر في علم الأثر|الكافيجي|879
+النكت الوفية|البقاعي|885
+شرح ألفية العراقي|ابن العيني|893
+التوضيح الأبهر|السخاوي|902
+الغاية في شرح الهداية|السخاوي|902
+فتح المغيث|السخاوي|902
+ألفية السيوطي|السيوطي|911
+نظم الدرر|السيوطي|911
+البحر الذي زخر|السيوطي|911
+التطريف في التصحيف|السيوطي|911
+تدريب الراوي|السيوطي|911
+تذكرة المؤتسي|السيوطي|911
+مفتاح الجنة|السيوطي|911
+فتح الباقي|زكريا الأنصاري|926
+قفو الأثر|ابن الحنبلي|971
+شرح نخبة الفكر|الملا علي القاري|1014
+اليواقيت والدرر شرح شرح نخبة الفكر|عبد الرؤوف المناوي|1031
+مقدمة في أصول الحديث|عبد الحق الدهلوي|1052
+المنظومة البيقونية|البيقوني|1080
+حاشية الخرشي|الخرشي|1101
+رسالة في جمع أشكال الحديث|ابن همات الدمشقي|1175
+إسبال المطر|الصنعاني|1182
+توضيح الأفكار|الصنعاني|1182
+ثمرات النظر|الصنعاني|1182
+العروس المجلية|صفي الدين البخاري|1200
+بلغة الأريب|مرتضى الزبيدي|1205
+إجازة الشيخ العلامة|عبد اللطيف آل الشيخ|1293
+الرفع والتكميل|أبو الحسنات اللكنوي|1304
+نيل الأماني|عبد الهادي الأبياري|1305
+الجرح والتعديل|جمال الدين القاسمي|1332
+قواعد التحديث|جمال الدين القاسمي|1332
+توجيه النظر|طاهر الجزائري|1338
+عقد الدرر|محمود شكري الألوسي|1342
+الباعث الحثيث (شرح)|أحمد شاكر|1377
+إيضاح المريب|أحمد الغماري|1380
+مسند الجن|أحمد الغماري|1380
+الاستشراق والمستشرقون|مصطفى السباعي|1384
+السنة ومكانتها|مصطفى السباعي|1384
+أحكام الحديث الضعيف|عبد الرحمن المعلمي|1386
+الأنوار الكاشفة|عبد الرحمن المعلمي|1386
+التنكيل|عبد الرحمن المعلمي|1386
+السنة ومكانتها من التشريع|عبد الحليم محمود|1397
+التقريرات السنية|حسن بن محمد المشاط|1399
+المبشرون والمستشرقون|محمد البهي|1402
+الوسيط في علوم ومصطلح الحديث|محمد أبو شهبة|1403
+دفاع عن السنة|محمد أبو شهبة|1403
+الحديث والمحدثون|محمد محمد أبو زهو|1403
+الرد على من ينكر حجية السنة|عبد الغني عبد الخالق|1403
+علوم الحديث ومصطلحه|صبحي الصالح|1407
+المحاضرة الدفاعية|محمد أمان الجامي|1415
+شبهات حول السنة|عبد الرزاق عفيفي|1415
+التدليس والمدلسون|حماد الأنصاري|1418
+حجية السنة النبوية|عبد القادر حبيب الله السندي|1420
+الحديث حجة بنفسه|ناصر الدين الألباني|1420
+منزلة السنة في الإسلام|ناصر الدين الألباني|1420
+شرح المنظومة البيقونية|ابن عثيمين|1421
+مصطلح الحديث|ابن عثيمين|1421
+مدرسة الحديث في مصر|محمد رشاد خليفة|1421
+المقترح في أجوبة بعض أسئلة المصطلح|مقبل الوادعي|1422
+السنة النبوية في مواجهة شبهات الاستشراق|أنور الجندي|1423
+تدوين السنة النبوية|محمد بن مطر الزهراني|1427
+علم الرجال نشأته وتطوره|محمد بن مطر الزهراني|1427
+السنة المفترى عليها|سالم البهنساوي|1427
+السنة كلها تشريع|موسى شاهين لاشين|1430
+المستشرقون والتراث|عبد العظيم الديب|1431
+طرق الاستدلال بالسنة والاستنباط منها|عبد العزيز الخياط|1432
+المستشرقون والسنة|سعد المرصفي|1439
+دراسات في السنة النبوية|محمد ضياء الرحمن الأعظمي|1442
+الزبد في مصطلح الحديث|فضل الرحمن صافي|1442
+تذكرة الطالبين|محمد بن علي بن آدم الأثيوبي|1444
+الإمام البخاري وفقه التراجم|نور الدين عتر|1445
+منهج النقد في علوم الحديث|نور الدين عتر|1445
+السنة قبل التدوين|محمد عجاج الخطيب|1445
+تيسير مصطلح الحديث|محمود الطحان|1445
+حجية السنة ودحض الشبهات التي تثار حولها|محمود الطحان|1445
+إجماع المحدثين|حاتم العوني|1446
+التخريج ودراسة الأسانيد|حاتم العوني|1446
+المنهج المقترح لفهم المصطلح|حاتم العوني|1446
+خلاصة التأصيل|حاتم العوني|1446
+تصحيفات المحدثين|سعيد باشنفر|1445
+الإمام البخاري وكتابه|عبد المحسن العباد|1445
+كيف نستفيد من الكتب الستة|عبد المحسن العباد|1445
+المقترب في بيان المضطرب|أحمد بازمول|1445
+أثر اختلاف الأسانيد|ماهر الفحل|1445
+أثر علل الحديث|ماهر الفحل|1445
+تحرير علوم الحديث|عبد الله الجديع|1445
+`;
+
+/* ============================================================
+   الأدوات
+   ============================================================ */
+const AR_DIGITS = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+const toAr = n => String(n).replace(/\d/g, d => AR_DIGITS[+d]);
+const CENTURIES = [
+  'الأول','الثاني','الثالث','الرابع','الخامس','السادس','السابع','الثامن',
+  'التاسع','العاشر','الحادي عشر','الثاني عشر','الثالث عشر','الرابع عشر','الخامس عشر'
+];
+const centuryName = y => {
+  const c = Math.max(1, Math.ceil(y / 100));
+  return 'القرن ' + (CENTURIES[c - 1] || toAr(c)) + ' الهجري';
+};
+
+function tagsFor(title) {
+  const t = [];
+  if (/صحيح/.test(title)) t.push('صحيح');
+  if (/سنن/.test(title)) t.push('سنن');
+  if (/مسند/.test(title)) t.push('مسند');
+  if (/موطأ|الموطأ/.test(title)) t.push('موطأ');
+  if (/أربعين|الأربعين/.test(title)) t.push('أربعين');
+  if (/مصابيح|مشكاة/.test(title)) t.push('مصابيح');
+  if (/علوم|مصطلح/.test(title)) t.push('مصطلح');
+  if (/شرح|الشرح/.test(title)) t.push('شرح');
+  if (!t.length) t.push('علوم حديث');
+  return t.slice(0, 3);
+}
+
+/* ============================================================
+   تحليل البيانات
+   ============================================================ */
+const books = RAW.trim().split('\n').map(line => {
+  const [title, author, death] = line.split('|').map(s => s.trim());
+  return { title, author, death: parseInt(death, 10) };
+}).filter(b => b.title && b.author && !Number.isNaN(b.death));
+
+/* ترتيب زمني حسب وفاة المصنف */
+books.sort((a, b) => a.death - b.death || a.title.localeCompare(b.title, 'ar'));
+
+/* تقسيم إلى بطاقات من عشرة كتب */
+const groups = [];
+for (let i = 0; i < books.length; i += 10) groups.push(books.slice(i, i + 10));
+
+/* ============================================================
+   الإحصاءات
+   ============================================================ */
+const uniqueAuthors = new Set(books.map(b => b.author)).size;
+const centuries = new Set(books.map(b => Math.ceil(b.death / 100))).size;
+document.getElementById('stat-books').textContent = toAr(books.length);
+document.getElementById('stat-authors').textContent = toAr(uniqueAuthors);
+document.getElementById('stat-centuries').textContent = toAr(centuries);
+document.getElementById('total-count').textContent = toAr(books.length);
+
+/* ============================================================
+   بناء الشبكة والبطاقات
+   ============================================================ */
+const grid = document.getElementById('grid');
+
+function bookTemplate(book, indexInCard) {
+  const tags = tagsFor(book.title)
+    .map(t => `<span class="tag">${t}</span>`).join('');
+
+  /* رابط مباشر من BOOK_URLS (جميع الكتب لها ID الآن) */
+  const url = BOOK_URLS[book.title];
+  if (!url) throw new Error('Missing verified book URL: ' + book.title);
+
+  return `
+    <details class="book" data-search="${(book.title + ' ' + book.author).toLowerCase()}">
+      <summary>
+        <span class="num">${toAr(indexInCard + 1)}</span>
+        <span class="book-main">
+          <span class="book-title">${book.title}</span>
+          <span class="book-author">${book.author} · ت ${toAr(book.death)}هـ</span>
+        </span>
+        <span class="chev" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+        </span>
+      </summary>
+      <div class="book-body">
+        <div class="meta-grid">
+          <div class="meta"><span>المصنف</span><b>${book.author}</b></div>
+          <div class="meta"><span>الوفاة</span><b>ت ${toAr(book.death)}هـ</b></div>
+          <div class="meta"><span>القرن</span><b>${centuryName(book.death)}</b></div>
+          <div class="meta"><span>النوع</span><b>علوم حديث</b></div>
+        </div>
+        <div class="tags">${tags}</div>
+        <p class="desc">العنوان في المكتبة الشاملة: ${DIGITAL_TITLES[book.title]}.</p>
+        <p class="desc">نسخة رقمية من «${book.title}» لـ${book.author}، الرابط يفتح صفحة الكتاب في المكتبة الشاملة.</p>
+        <a class="open-link" href="${url}" target="_blank" rel="noopener">
+          تصفح الكتاب
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+      </div>
+    </details>
+  `;
+}
+
+const frag = document.createDocumentFragment();
+
+groups.forEach((group, gi) => {
+  const first = group[0], last = group[group.length - 1];
+  const min = first.death, max = last.death;
+
+  /* الأكورديون الرئيسي للبطاقة — مغلق افتراضيًا */
+  const card = document.createElement('details');
+  card.className = 'card';
+  card.style.animationDelay = Math.min(gi * 28, 420) + 'ms';
+
+  const range = min === max
+    ? `ت ${toAr(min)}هـ`
+    : `ت ${toAr(min)}هـ — ${toAr(max)}هـ`;
+
+  const subtitle = group.length === 1
+    ? first.author
+    : `من ${first.author} إلى ${last.author}`;
+
+  const crossCentury = Math.ceil(first.death / 100) !== Math.ceil(last.death / 100);
+  const centuryLine = centuryName(first.death) + (crossCentury ? ' وما بعده' : '');
+
+  card.innerHTML = `
+    <summary class="card-head">
+      <span class="card-info">
+        <span class="card-meta">
+          <span class="badge"><i></i> البطاقة ${toAr(gi + 1)}</span>
+          <span class="range">${range}</span>
+        </span>
+        <span class="card-title">${subtitle}</span>
+        <span class="card-sub"><b>${toAr(group.length)}</b> كتب · ${centuryLine}</span>
+      </span>
+      <span class="card-chev" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+      </span>
+    </summary>
+    <div class="book-list">
+      ${group.map((b, i) => bookTemplate(b, i)).join('')}
+    </div>
+  `;
+  frag.appendChild(card);
+});
+
+grid.appendChild(frag);
+
+/* ============================================================
+   البحث والتصفية
+   ============================================================ */
+const search = document.getElementById('search');
+const visibleCount = document.getElementById('visible-count');
+const cards = [...document.querySelectorAll('.card')];
+const allBooks = [...document.querySelectorAll('details.book')];
+
+function applyFilter() {
+  const q = search.value.trim().toLowerCase();
+  let visible = 0;
+
+  allBooks.forEach(el => {
+    const match = !q || el.dataset.search.includes(q);
+    el.hidden = !match;
+    if (match) visible++;
+  });
+
+  cards.forEach(card => {
+    const any = [...card.querySelectorAll('details.book')].some(el => !el.hidden);
+    card.hidden = !any;
+    if (!any) card.open = false;
+  });
+
+  /* بطاقات مفتوحة فقط عند وجود بحث فعّال، وإلا فتبقى مغلقة */
+  if (q) {
+    cards.forEach(card => {
+      if (!card.hidden) card.open = true;
+    });
+  } else {
+    cards.forEach(card => {
+      card.open = false;
+    });
+  }
+
+  visibleCount.textContent = toAr(visible);
+
+  let empty = document.querySelector('.empty');
+  if (!visible) {
+    if (!empty) {
+      empty = document.createElement('div');
+      empty.className = 'empty';
+      empty.innerHTML = '<b>لا نتائج مطابقة</b>جرّب كلمة أخرى أو أعد ضبط البحث لعرض جميع الكتب.';
+      grid.appendChild(empty);
+    }
+  } else if (empty) {
+    empty.remove();
+  }
+}
+
+let t;
+search.addEventListener('input', () => {
+  clearTimeout(t);
+  t = setTimeout(applyFilter, 120);
+});
+
+document.getElementById('reset').addEventListener('click', () => {
+  search.value = '';
+  applyFilter();
+  search.focus();
+});
+
+/* الحالة الابتدائية: جميع البطاقات وجميع الكتب مغلقة */
+applyFilter();
+</script>
+</body>
+</html>
